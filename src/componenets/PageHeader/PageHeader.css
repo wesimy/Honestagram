@@ -1,0 +1,19 @@
+.app-header {
+  z-index: 10; }
+  .app-header .uk-navbar-sticky {
+    background: white; }
+    .app-header .uk-navbar-sticky .uk-iconnav a {
+      color: black; }
+  .app-header .brand {
+    margin: 30px 15px; }
+    .app-header .brand h1 {
+      color: #9c342e; }
+    @media (min-width: 960px) {
+      .app-header .brand {
+        margin: 30px; } }
+  .app-header .uk-iconnav {
+    margin: 30px; }
+    .app-header .uk-iconnav a {
+      color: white; }
+      .app-header .uk-iconnav a.active {
+        color: #449d55; }

@@ -1,0 +1,31 @@
+@import '../../theme/_index.scss';
+.app-header {
+   
+    z-index: 10;
+    .uk-navbar-sticky {
+        background: white;
+        .uk-iconnav {
+            a {
+                color: black;
+            }
+        }
+    }
+    .brand {
+        margin: 30px 15px;
+        h1 {
+            color: $primary;
+        }
+        @media (min-width: map-get($breakpoints,md)) {
+            margin: 30px;
+        }
+    }
+    .uk-iconnav {
+        margin: 30px;
+        a {
+            color: white;
+            &.active {
+                color: $third;
+            }
+        }
+    }
+}
