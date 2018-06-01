@@ -4,6 +4,9 @@ import { fetchWallPosts, fetchWall, setWall } from './wallActions';
 import WallPostForm from './WallPostForm/WallPostForm';
 import WallPosts from './WallPosts/WallPosts';
 import MasterPage from '../../hoc/MasterPage/MasterPage';
+import PageCover from '../../componenets/PageCover/PageCover';
+import PageAvatar from '../../componenets/PageAvatar/PageAvatar';
+
 
 class Wall extends Component {
   constructor(props) {
@@ -12,7 +15,6 @@ class Wall extends Component {
 
   componentDidMount() {
     if (this.props.match.params.uid) {
-      console.log(this.props.match.params.uid);
       this.props.fetchWall(this.props.match.params.uid, this.props.fetchWallPosts(this.props.match.params.uid))
     }
     else {
@@ -22,18 +24,22 @@ class Wall extends Component {
   }
   
   onNewWallPostHandler(){
-    console.log('something');
+    this.props.fetchWallPosts(this.props.wall.info.uid);
   }
 
   render() {
     return (
-      <div>
-        {/* <h1>Welcome {auth.currentUser.displayName}</h1>
-        <img src={auth.currentUser.photoURL} /> */}
+      <div className="page">
+        
+        <PageCover />
+        <div className="uk-container">
+        <PageAvatar datasource={this.props.wall.info}/>
 
-        <WallPostForm onSubmitCallback={()=>{this.onNewWallPostHandler()}}/>
+        <WallPostForm datasource={this.props.wall} onSubmitCallback={()=>{this.onNewWallPostHandler()}}/>
         
         <WallPosts datasource={this.props.wall.posts} />
+        </div>
+        
       </div>
     )
 

@@ -1,0 +1,21 @@
+@import '../../theme/_index.scss';
+
+.content-profile{
+    .uk-card-media-top{
+        margin: 0 auto;
+        img{
+            transform: translateY(-50%);
+             margin-bottom: -55%; 
+        }
+        
+    }
+    .uk-card-body{
+        //padding-top: 15px;
+        h3{
+            margin: 0;
+        }
+        p{
+           margin: 0; 
+        }
+    }
+}

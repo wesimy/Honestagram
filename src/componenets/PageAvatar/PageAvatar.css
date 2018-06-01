@@ -1,0 +1,11 @@
+.content-profile .uk-card-media-top {
+  margin: 0 auto; }
+  .content-profile .uk-card-media-top img {
+    transform: translateY(-50%);
+    margin-bottom: -55%; }
+
+.content-profile .uk-card-body h3 {
+  margin: 0; }
+
+.content-profile .uk-card-body p {
+  margin: 0; }

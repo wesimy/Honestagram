@@ -3,8 +3,8 @@ import { Provider } from 'react-redux';
 import store from './store/store';
 import AuthWrapper from './containers/AuthWrapper/AuthWrapper';
 
+
 //uikit
-import "uikit/dist/css/uikit.min.css";
 import Icons from "uikit/dist/js/uikit-icons";
 import UIkit from "uikit";
 UIkit.use(Icons);

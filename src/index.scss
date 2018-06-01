@@ -1,4 +1,5 @@
-//@import '~antd/dist/antd.css';
+@import '~uikit/dist/css/uikit.min.css';
+@import '~antd/dist/antd.css';
 @import './media/fonts/fonts.scss';
 @import './theme/_index.scss';
 //@import './components/buttons/buttons.scss';
@@ -47,5 +48,29 @@ h1,h2,h3{
             top: -0.7em;
             width: 1.4em;
         }
+    }
+}
+
+.uk-button-primary{
+    background-color:$primary;
+}
+.uk-button-secondary{
+    background-color:$secondary;
+    color:darken($secondary,30%);
+    &:hover,&:focus{
+        background-color:darken($secondary,10%);
+        color:darken($secondary,30%);
+    }
+}
+.uk-button-third{
+    background-color:$third;
+    color:white !important;
+    &:hover,&:focus{
+        background-color:darken($third,10%);
+        color:white; 
+    }    
+    &:disabled{
+        opacity: 0.5;
+        //color:darken($third,15%);
     }
 }

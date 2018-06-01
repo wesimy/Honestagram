@@ -4,15 +4,28 @@ import { connect } from 'react-redux';
 import routes from '../../../config/routes';
 import { createAccount } from '../accountActions';
 import AntdFormField from '../../../hoc/AntdFormField/AntdFormField';
-import { Switch, Form, Input, Select, Checkbox, Button,  } from "antd";
+import { Switch, Form, Input, Select, Checkbox, Button } from "antd";
 import MasterPage from '../../../hoc/MasterPage/MasterPage';
 
 
 const AInput = AntdFormField(Input);
+const ATextArea = AntdFormField(Input.TextArea);
 
 class CreateAccount extends Component {
-  componentDidMount(){
-    this.props.initialize(this.props.initialValues);
+  constructor(props){
+    super(props);
+    
+  }
+  componentDidMount() {
+    let initialValues = {
+      displayName: this.props.session.user.displayName,
+      email: this.props.session.user.email,
+      photoURL: this.props.session.user.photoURL,
+      uid: this.props.session.user.uid,
+      isPrivate: false,
+    }
+
+    this.props.initialize(initialValues);
   }
   renderField(field) {
     return (
@@ -28,14 +41,14 @@ class CreateAccount extends Component {
     );
   }
   onSubmit(values) {
+console.log(values);
     let data = {
-      ...this.props.session, account: {
+      ...this.props.session, 
+      account: {
         ...values,
-        isPrivate: false,
-        uid: this.props.initialValues.uid,
-
       }
     }
+
     this.props.createAccount(data, () => {
       this.props.history.push(routes.dashboard);
     });
@@ -46,22 +59,24 @@ class CreateAccount extends Component {
       <div>
         <h1>Choose a name for your wall</h1>
         <p>a name could be your name or your nickname</p>
-        <img src={this.props.initialValues.photoURL}/>
+        <img src={(this.props.form.initial)? this.props.form.initial.photoURL: ''} />
         <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
-        
-      
-        <fieldset className="uk-fieldset">
+
+
+          <fieldset className="uk-fieldset">
             <div className="uk-margin">
-              <Field className="uk-input" name="photoURL" type="text" placeholder="photo" label="photurl" component={this.renderField} />
+            <Field label="PhotoURL" name="photoURL" component={AInput} placeholder="PhotoURL" hasFeedback />
             </div>
           </fieldset>
 
-<Field label="Display Name" name="displayName" component={AInput} placeholder="Display Name" hasFeedback />
+          <Field label="Display Name" name="displayName" component={AInput} placeholder="Display Name" hasFeedback />
 
-<Field label="Email Address" name="email" component={AInput} placeholder="Email Address" disabled hasFeedback />
-          
-          
-          
+          <Field label="Tell us about your wall" name="wallDescription" component={ATextArea} placeholder="This is a good place to ask people what you like them to be honest about" hasFeedback />
+
+          <Field label="Email Address" name="email" component={AInput} placeholder="Email Address" disabled hasFeedback />
+
+
+
 
 
           <Button type="primary" htmlType="submit">Submit</Button>
@@ -104,11 +119,12 @@ function validate(values) {
 function mapStateToProps(state) {
   return {
     session: state.session,
-    initialValues: state.session.user,
+    form: state.form.createAccount,
+
   }
 }
 export default reduxForm({
-  enableReinitialize: true,
+  //enableReinitialize: true,
   form: 'createAccount',
   validate
 })(connect(mapStateToProps, { createAccount })(MasterPage(CreateAccount)));
