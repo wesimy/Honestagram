@@ -5,20 +5,9 @@ import {Link} from 'react-router-dom';
 import {emailSignin, facebookSignIn, googleSignIn} from '../../AuthWrapper/authWrapperActions';
 import withoutAuth from '../../../hoc/WithoutAuth/WithoutAuth';
 import MasterPage from '../../../hoc/MasterPage/MasterPage';
+import {renderInput} from '../../../util/renderFormFields';
 class SessionSignIn extends Component {
-  renderField(field) {
-    return (
-      <div>
-        <label>{field.label}</label>
-        <div>
-          <input {...field.input} className={(field.meta.touched && field.meta.error)? `${field.className} uk-form-danger`: field.className } placeholder={field.label} type={field.type} />
-          {field.meta.touched &&
-            ((field.meta.error && <span>{field.meta.error}</span>) ||
-              (field.meta.warning && <span>{field.meta.warning}</span>))}
-        </div>
-      </div>
-    );
-  }
+
   onSubmit(values){
     this.props.emailSignin(values.email,values.password).catch(err => {
      // UIkit.notification(err, {status: 'danger'});  
@@ -28,24 +17,30 @@ class SessionSignIn extends Component {
   render() {
     const { handleSubmit, pristine, reset, submitting } = this.props;
     return (
-      <div>
-        <h1>Login</h1>
+
+    <div className="uk-position-center uk-overlay uk-overlay-default">
+
+      <div className="uk-container">
+        
         <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
           <fieldset className="uk-fieldset">
             <div className="uk-margin">
-              <Field className="uk-input" name="email" type="email" placeholder="Email" label="Email" component={this.renderField}/>
+              <Field className="uk-input" name="email" type="email" placeholder="Email" label="Email" component={renderInput}/>
             </div>
             <div className="uk-margin">
-              <Field className="uk-input" name="password" type="password"  label="Password" component={this.renderField}/>
+              <Field className="uk-input" name="password" type="password"  label="Password" component={renderInput}/>
             </div>
           </fieldset>
           <button className="uk-button uk-button-primary" type="submit" disabled={submitting}>Login</button>
           <Link className="uk-button uk-button-secondary" to="/signup">Create Account</Link>
         </form>
 
-        <button type="button" className="uk-button uk-button-primary" onClick={this.props.googleSignIn}>Sign in with Google</button>
-        <button type="button" className="uk-button uk-button-primary" onClick={this.props.facebookSignIn}>Sign in with Facebook</button>
+        <button type="button" className="button button-social-login button-googleplus" onClick={this.props.googleSignIn}><span data-uk-icon="icon: google"></span> Sign in with Google</button>
+        <button type="button" className="button button-social-login button-facebook" onClick={this.props.facebookSignIn}><span data-uk-icon="icon: facebook"></span> Sign in with Facebook</button>
+        <button type="button" className="button button-social-login button-twitter" onClick={this.props.facebookSignIn}><span data-uk-icon="icon: twitter"></span> Sign in with Twitter</button>
       </div>
+      </div>
+   
     )
   }
 }

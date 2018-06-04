@@ -97,8 +97,8 @@ function validate(values) {
   // if (!values.category) {
   //   errors.category = 'Required'
   // }
-  if (!values.firstName) {
-    errors.firstName = "Required";
+  if (!values.displayName) {
+    errors.displayName = "Required";
   }
 
   // if (!values.email) {

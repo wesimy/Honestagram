@@ -8,9 +8,11 @@ import PrivateRoute from '../../hoc/PrivateRoute/PrivateRoute';
 import Home from '../Home/Home';
 import Wall from '../Wall/Wall';
 import Dashboard from '../Dashboard/Dashboard';
+import Posts from '../Posts/Posts';
 import SignIn from '../Account/SignIn/SingIn';
 import SignOut from '../Account/SignOut/SignOut';
 import SingUp from '../Account/SignUp/SingUp';
+import Settings from '../Account/Settings/Settings';
 import CreateAccount from '../Account/Create/Create'
 
 
@@ -29,7 +31,8 @@ class AuthWrapper extends Component {
               <PrivateRoute path="/dashboard" component={Dashboard} />
               <Route exact path="/wall/:uid" component={Wall} />
               <PrivateRoute exact path="/wall" component={Wall} />
-              {/* <PrivateRoute exact path="/dashboard/" component={Dashboard} /> */}
+              <PrivateRoute exact path="/posts" component={Posts} />
+              <PrivateRoute exact path="/account/settings" component={Settings} />
             </Switch>
             </React.Fragment>
         </BrowserRouter>

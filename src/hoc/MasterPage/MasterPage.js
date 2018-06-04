@@ -20,7 +20,6 @@ export default (Component)=>{
         
                 <Component {...this.props} />
           
-            <PageFooter />
             </React.Fragment> 
         )
         

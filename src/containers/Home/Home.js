@@ -1,9 +1,27 @@
-import React from 'react'
+import React , {Component} from 'react'
+import {connect} from 'react-redux';
+import routes from '../../config/routes';
+import {Redirect} from 'react-router-dom';
 
-export default () => {
-  return (
-    <div>
-      <h1>Home Page</h1>
-    </div>
-  )
+class Home extends Component {
+  state = {}
+  render() { 
+
+    if(this.props.session.isAuthenticated){
+      return(<Redirect to={routes.default} />)
+    }
+
+    return (  
+      <React.Fragment>
+      home
+      </React.Fragment>
+    )
+  }
 }
+ 
+function mapStateToProps(state){
+  return {
+    session: state.session
+  }
+}
+export default connect(mapStateToProps)(Home);

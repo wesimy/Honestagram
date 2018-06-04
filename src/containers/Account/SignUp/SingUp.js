@@ -5,7 +5,7 @@ import routes from '../../../config/routes';
 import {signup} from '../../AuthWrapper/authWrapperActions';
 import withoutAuth from '../../../hoc/WithoutAuth/WithoutAuth';
 import MasterPage from '../../../hoc/MasterPage/MasterPage';
-
+import {renderInput} from '../../../util/renderFormFields';
 
 
 class SignUp extends Component {
@@ -17,37 +17,25 @@ class SignUp extends Component {
       });
     }  
   
-    renderField(field) {
-      return (
-        <div>
-          <label>{field.label}</label>
-          <div>
-            <input {...field.input} className={(field.meta.touched && field.meta.error)? `${field.className} uk-form-danger`: field.className } placeholder={field.label} type={field.type} />
-            {field.meta.touched &&
-              ((field.meta.error && <span>{field.meta.error}</span>) ||
-                (field.meta.warning && <span>{field.meta.warning}</span>))}
-          </div>
-        </div>
-      );
-    }
-  
     render() {
       const { handleSubmit, pristine, reset, submitting } = this.props;
       return (
-        <div>
-          <h1>Signup</h1>
+        <div className="uk-position-center uk-overlay uk-overlay-default">
+
+      <div className="uk-container">
+
           <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
             <fieldset className="uk-fieldset">
               <div className="uk-margin">
-                  <Field className="uk-input" name="display-name" type="input"  label="Name" component={this.renderField}/>
+                  <Field className="uk-input" name="displayName" type="input"  label="Name" component={renderInput}/>
               </div>
   
               <div className="uk-margin">
-                <Field className="uk-input" name="email" type="email" placeholder="Email" label="Email" component={this.renderField}/>
+                <Field className="uk-input" name="email" type="email" placeholder="Email" label="Email" component={renderInput}/>
               </div>
   
               <div className="uk-margin">
-                <Field className="uk-input" name="password" type="password"  label="Password" component={this.renderField}/>
+                <Field className="uk-input" name="password" type="password"  label="Password" component={renderInput}/>
               </div>
             </fieldset>
   
@@ -55,12 +43,20 @@ class SignUp extends Component {
             
           </form>
         </div>
+        </div>
       )
     }
   }
   
   function validate(values) {
     const errors = {}
+    
+    if (!values.displayName) {
+      errors.displayName = 'Required'
+    } else if (values.displayName.length < 4) {
+      errors.displayName = 'Please enter your name'
+    }
+
     if (!values.email) {
       errors.email = 'Required'
     } else if (values.email.length < 4) {
@@ -71,7 +67,7 @@ class SignUp extends Component {
       errors.password = 'Required'
     }
     else if (values.password.length < 4) {
-      errors.password = 'Please enter Email'
+      errors.password = 'Password can\'t be blank'
     }
   
     return errors

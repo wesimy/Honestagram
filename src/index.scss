@@ -2,7 +2,7 @@
 @import '~antd/dist/antd.css';
 @import './media/fonts/fonts.scss';
 @import './theme/_index.scss';
-//@import './components/buttons/buttons.scss';
+
 html{
     background: $grey-bg;
 }
@@ -13,6 +13,12 @@ body {
     color: $grey;
     background: $grey-bg;
     
+}
+a{
+    @include transition(all 0.3s ease-in-out);
+}
+#root{
+    min-height: 100%;
 }
 .app{
     position: relative;
@@ -51,6 +57,14 @@ h1,h2,h3{
     }
 }
 
+.uk-tooltip{
+    background-color: rgba(black,0.8);
+}
+///////////////////
+// Buttons
+/////////////////
+
+
 .uk-button-primary{
     background-color:$primary;
 }
@@ -73,4 +87,95 @@ h1,h2,h3{
         opacity: 0.5;
         //color:darken($third,15%);
     }
+}
+
+
+$base-spacing-unit: 24px;
+$half-spacing-unit: 12px;
+$button-width: auto;
+$button-height: 45px;
+$button-text-color: white;
+
+$social-list: (
+    facebook #4b70ab,
+    twitter #3B94D9,
+    googleplus #DD4B39,
+);
+
+
+
+$base-spacing-unit: 24px;
+$half-spacing-unit: 12px;
+$button-width: auto;
+$button-height: 45px;
+$button-text-color: white;
+
+$social-list: (
+    facebook #4b70ab,
+    twitter #3B94D9,
+    googleplus #DD4B39,
+);
+
+
+
+.button-social-login {
+  width: $button-width;
+  display: inline-block;
+	padding: 0 ($base-spacing-unit - ($half-spacing-unit / 2)) 0 ($half-spacing-unit / 2);
+	border: 0 none;
+  text-decoration: none;
+	transition: all 250ms linear;
+	margin-bottom: $half-spacing-unit;
+	margin-right: $half-spacing-unit;
+  color: $button-text-color;
+	height: $button-height;
+	line-height: $button-height - 4;
+	position: relative;
+  text-align: left;
+&:hover {
+		text-decoration: none;
+	}
+	>span {
+		margin-right: $half-spacing-unit;
+		font-size: $base-spacing-unit;
+		line-height: $base-spacing-unit;
+		width: ($base-spacing-unit * 2) - ($half-spacing-unit / 2);
+		height: $base-spacing-unit;
+		text-align: center;
+		display: inline-block;
+		position: relative;
+		top: 4px;
+
+		&:before {
+			display: inline-block;
+			width: ($base-spacing-unit * 2) - ($half-spacing-unit / 2) - 2;
+		}
+
+		&:after {
+			content:"";
+		}
+
+	}
+
+}
+
+@each $name, $color in $social-list {
+    .button-#{$name} {
+		background-color: $color;
+    border: 1px solid darken($color, 10%);
+		
+		>span {
+			//border-right: 1px solid darken($color, 10%);
+
+			&:after {
+				border-right: 1px solid lighten($color, 10%);
+			}
+		}
+
+		&:hover {
+			background-color: darken($color, 5%);
+		}
+
+	}
+
 }

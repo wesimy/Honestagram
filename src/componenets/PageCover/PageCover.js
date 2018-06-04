@@ -4,7 +4,26 @@ import './PageCover.css';
 const PageCover = ({datasource}) => {
     return (
         <div className="page-cover uk-cover-container">
-     <img src="http://getuikit.com/docs/images/dark.jpg" alt="" data-uk-cover />
+      <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
  </div>
     )
 }

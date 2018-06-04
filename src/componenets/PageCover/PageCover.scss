@@ -1,5 +1,7 @@
+@import '../../theme/_index.scss';
 .page-cover{
-    height: 15vw;
-    min-height: 200px;
+    height: 10vw;
+    min-height: 150px;
+    background-color: $primary;
 }
 

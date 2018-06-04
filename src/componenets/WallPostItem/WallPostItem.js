@@ -9,7 +9,7 @@ export default ({datasource}) => {
         <header className="uk-comment-header uk-position-relative">
             <div className="uk-grid-medium uk-flex-middle" data-uk-grid>
                 <div className="uk-width-auto">
-                    <img className="uk-comment-avatar" src="https://getuikit.com/docs/images/avatar.jpg" width="80" height="80" alt="" />
+                    <img className="uk-comment-avatar" src="https://getuikit.com/docs/images/avatar.jpg" width="70" height="70" alt="" />
                 </div>
                 <div className="uk-width-expand">
                     <h4 className="uk-comment-title uk-margin-remove">{(datasource.isAnonymous)? 'Anonymous' : datasource.author}</h4>
