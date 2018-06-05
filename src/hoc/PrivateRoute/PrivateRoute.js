@@ -13,13 +13,13 @@ class PrivateRoute extends Component {
       {...rest}
       render={props =>{
         // isAuth + Has Account +  Create Acc Page
-        if(this.props.session.isAuthenticated && this.props.session.account.uid && this.props.location.pathname == routes.createaccount){
-          return(
-          <Redirect
-            to={routes.default}
-          />
-          )
-        }
+        // if(this.props.session.isAuthenticated && this.props.session.account.uid && this.props.location.pathname == routes.createaccount){
+        //   return(
+        //   <Redirect
+        //     to={routes.default}
+        //   />
+        //   )
+        // }
         
          if(this.props.session.isAuthenticated && this.props.session.account.uid){
           return(

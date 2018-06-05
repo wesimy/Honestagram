@@ -2,11 +2,13 @@ import { database } from '../../config/firebase';
 import _ from 'lodash';
 
 // Fetch Wall Data
-export function fetchWall(uid,callback=()=>{}) {
-    const wallDB = database.ref(`/accounts`).orderByChild("uid").equalTo(uid);
+export function fetchWall(wid,callback=()=>{}) {
+    
+    const wallDB = database.ref(`/accounts/${wid}`);
     return dispatch => {
         wallDB.once('value', snapshot => {
-            const data = (_.find(snapshot.val()))? _.find(snapshot.val()): {}
+            console.log(snapshot.val());
+            const data = snapshot.val()? snapshot.val(): {}
             dispatch({
                 type: 'FETCH_WALL_INFO',
                 payload: data
@@ -26,8 +28,8 @@ export function setWall(account,callback=()=>{}) {
 }
 
 
-export function fetchWallPosts(uid, callback = ()=>{}) {
-    const postsDB = database.ref(`/posts`).orderByChild("wall").equalTo(uid);
+export function fetchWallPosts(wid, callback = ()=>{}) {
+    const postsDB = database.ref(`/posts`).orderByChild("wall").equalTo(wid);
     return dispatch => {
         postsDB.once('value', snapshot => {
             dispatch({
@@ -42,6 +44,7 @@ export function fetchWallPosts(uid, callback = ()=>{}) {
 
 
 export function newWallPost(data, callback = ()=>{}) {
+    console.log(data);
     const postsDB = database.ref(`/posts`);
     return dispatch => {
         postsDB.push(data)

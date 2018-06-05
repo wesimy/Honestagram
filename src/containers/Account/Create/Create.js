@@ -41,11 +41,12 @@ class CreateAccount extends Component {
     );
   }
   onSubmit(values) {
-console.log(values);
+
     let data = {
       ...this.props.session, 
       account: {
         ...values,
+        date: Date.now(),
       }
     }
 

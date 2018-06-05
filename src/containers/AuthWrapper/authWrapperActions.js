@@ -5,6 +5,7 @@ export function signup(u, p) {
     return dispatch => auth.createUserWithEmailAndPassword(u, p).then(result=>{
         
         if (result.user) {
+            
             localStorage.setItem("session",JSON.stringify({
                 isAuthenticated: true,
                     user: result.user,
@@ -17,6 +18,12 @@ export function signup(u, p) {
                     user: result.user,
                 }
             });
+            var u = auth.currentUser;
+            u.sendEmailVerification().then(function() {
+                // Email sent.
+              }).catch(function(error) {
+                // An error happened.
+              });
         }
         
     });

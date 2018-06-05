@@ -29,7 +29,7 @@ class AuthWrapper extends Component {
               <Route exact path="/signup" component={SingUp} />
               <PrivateRoute path="/account/create" component={CreateAccount} />
               <PrivateRoute path="/dashboard" component={Dashboard} />
-              <Route exact path="/wall/:uid" component={Wall} />
+              <Route exact path="/wall/:wid" component={Wall} />
               <PrivateRoute exact path="/wall" component={Wall} />
               <PrivateRoute exact path="/posts" component={Posts} />
               <PrivateRoute exact path="/account/settings" component={Settings} />

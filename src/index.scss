@@ -60,11 +60,17 @@ h1,h2,h3{
 .uk-tooltip{
     background-color: rgba(black,0.8);
 }
+
+///////////////////
+// Backgrgounds
+/////////////////
+.bg-white{
+    background-color: white;
+}
+
 ///////////////////
 // Buttons
 /////////////////
-
-
 .uk-button-primary{
     background-color:$primary;
 }
@@ -89,35 +95,16 @@ h1,h2,h3{
     }
 }
 
-
 $base-spacing-unit: 24px;
 $half-spacing-unit: 12px;
 $button-width: auto;
 $button-height: 45px;
 $button-text-color: white;
-
 $social-list: (
     facebook #4b70ab,
     twitter #3B94D9,
     googleplus #DD4B39,
 );
-
-
-
-$base-spacing-unit: 24px;
-$half-spacing-unit: 12px;
-$button-width: auto;
-$button-height: 45px;
-$button-text-color: white;
-
-$social-list: (
-    facebook #4b70ab,
-    twitter #3B94D9,
-    googleplus #DD4B39,
-);
-
-
-
 .button-social-login {
   width: $button-width;
   display: inline-block;
