@@ -1,6 +1,17 @@
 {
-  "main.css": "static/css/main.086c5a36.css",
-  "main.css.map": "static/css/main.086c5a36.css.map",
-  "main.js": "static/js/main.72970cda.js",
-  "main.js.map": "static/js/main.72970cda.js.map"
+  "main.css": "static/css/main.cdf07e7b.css",
+  "main.css.map": "static/css/main.cdf07e7b.css.map",
+  "main.js": "static/js/main.b64361bc.js",
+  "main.js.map": "static/js/main.b64361bc.js.map",
+  "static/media/OpenSans-Bold.eot": "static/media/OpenSans-Bold.0db9c972.eot",
+  "static/media/OpenSans-Bold.ttf": "static/media/OpenSans-Bold.fdc25e68.ttf",
+  "static/media/OpenSans-Bold.woff": "static/media/OpenSans-Bold.3e5c6fe2.woff",
+  "static/media/OpenSans-Light.eot": "static/media/OpenSans-Light.efe3c422.eot",
+  "static/media/OpenSans-Light.ttf": "static/media/OpenSans-Light.543287b9.ttf",
+  "static/media/OpenSans-Light.woff": "static/media/OpenSans-Light.7bf931ca.woff",
+  "static/media/OpenSans.eot": "static/media/OpenSans.d0c996fb.eot",
+  "static/media/OpenSans.ttf": "static/media/OpenSans.c1183634.ttf",
+  "static/media/OpenSans.woff": "static/media/OpenSans.0e2413a0.woff",
+  "static/media/avatar.png": "static/media/avatar.6879220b.png",
+  "static/media/paper-plane.svg": "static/media/paper-plane.0ee8b8f2.svg"
 }
