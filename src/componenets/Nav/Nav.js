@@ -19,7 +19,7 @@ export default ({ isAuth, account }) => {
                     :
                     (
                         <ul className="uk-iconnav uk-flex uk-flex-middle">
-                            <li><Link to={routes.dashboard}  uk-tooltip={'title: Dashboard;delay: 250;animation: uk-animation-slide-bottom-small'}><div className="uk-border-circle"><img className="uk-border-circle" src={account.photoURL} alt={account.displayName} /></div></Link></li>
+                            {/* <li><Link to={routes.dashboard}  uk-tooltip={'title: Dashboard;delay: 250;animation: uk-animation-slide-bottom-small'}><div className="uk-border-circle"><img className="uk-border-circle" src={account.photoURL} alt={account.displayName} /></div></Link></li> */}
                             <li><Link data-uk-icon="icon: comments" to={routes.dashboard}  uk-tooltip="title: Dashboard; delay: 250;animation: uk-animation-slide-bottom-small"></Link></li>
                             <li><Link data-uk-icon="icon: bell" to={routes.posts}  uk-tooltip="title:Reveal Requests; delay: 250;animation: uk-animation-slide-bottom-small" ></Link></li>
                             <li><Link data-uk-icon="icon: settings" to={routes.settings} uk-tooltip="title:Account Settings; delay: 250;animation: uk-animation-slide-bottom-small"></Link></li>

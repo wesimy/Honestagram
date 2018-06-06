@@ -6,27 +6,32 @@ import { createAccount } from '../accountActions';
 import AntdFormField from '../../../hoc/AntdFormField/AntdFormField';
 import { Switch, Form, Input, Select, Checkbox, Button } from "antd";
 import MasterPage from '../../../hoc/MasterPage/MasterPage';
-
+import { Upload, Icon, message } from 'antd';
+import AvatarUploader from '../../../componenets/AvatarUploader/AvatarUploader';
+import PageCover from '../../../componenets/PageCover/PageCover';
+import placeholder from '../../../media/png/avatar.png';
 
 const AInput = AntdFormField(Input);
 const ATextArea = AntdFormField(Input.TextArea);
 
 class CreateAccount extends Component {
-  constructor(props){
+  constructor(props) {
     super(props);
-    
+    this.state = {
+      photoURL: placeholder
+    }
   }
   componentDidMount() {
     let initialValues = {
-      displayName: this.props.session.user.displayName,
+      //  displayName: this.props.session.user.displayName,
       email: this.props.session.user.email,
-      photoURL: this.props.session.user.photoURL,
       uid: this.props.session.user.uid,
       isPrivate: false,
+      isArchive: false,
     }
-
     this.props.initialize(initialValues);
   }
+
   renderField(field) {
     return (
       <div>
@@ -38,14 +43,14 @@ class CreateAccount extends Component {
               (field.meta.warning && <span>{field.meta.warning}</span>))}
         </div>
       </div>
-    );
+    )
   }
   onSubmit(values) {
-
     let data = {
-      ...this.props.session, 
+      ...this.props.session,
       account: {
         ...values,
+        photoURL: this.state.photoURL,
         date: Date.now(),
       }
     }
@@ -54,34 +59,30 @@ class CreateAccount extends Component {
       this.props.history.push(routes.dashboard);
     });
   }
+
+  //
+  updateAvatar = (url) => {
+    this.setState({
+      photoURL: url
+    });
+  }
+
   render() {
+
     const { handleSubmit, pristine, reset, submitting } = this.props;
     return (
-      <div>
-        <h1>Choose a name for your wall</h1>
-        <p>a name could be your name or your nickname</p>
-        <img src={(this.props.form.initial)? this.props.form.initial.photoURL: ''} />
-        <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
-
-
-          <fieldset className="uk-fieldset">
-            <div className="uk-margin">
-            <Field label="PhotoURL" name="photoURL" component={AInput} placeholder="PhotoURL" hasFeedback />
-            </div>
-          </fieldset>
-
-          <Field label="Display Name" name="displayName" component={AInput} placeholder="Display Name" hasFeedback />
-
-          <Field label="Tell us about your wall" name="wallDescription" component={ATextArea} placeholder="This is a good place to ask people what you like them to be honest about" hasFeedback />
-
-          <Field label="Email Address" name="email" component={AInput} placeholder="Email Address" disabled hasFeedback />
-
-
-
-
-
-          <Button type="primary" htmlType="submit">Submit</Button>
-        </form>
+      <div className="page">
+        <div className="bg-white ">
+          <div className="uk-container">
+            <AvatarUploader onSuccess={this.updateAvatar} placeholder={placeholder} />
+            <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
+              <Field label="Display Name" name="displayName" component={AInput} placeholder="Display Name" hasFeedback />
+              <Field label="Tell us about your wall" name="wallDescription" component={ATextArea} placeholder="This is a good place to ask people what you like them to be honest about" hasFeedback />
+              <Field label="Email Address" name="email" component={AInput} placeholder="Email Address" disabled hasFeedback />
+              <Button type="primary" htmlType="submit">Submit</Button>
+            </form>
+          </div>
+        </div>
       </div>
     )
   }
@@ -102,18 +103,6 @@ function validate(values) {
     errors.displayName = "Required";
   }
 
-  // if (!values.email) {
-  //   errors.email = 'Required'
-  // } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
-  //   errors.email = 'Invalid email address'
-  // }
-  // if (!values.age) {
-  //   errors.age = 'Required'
-  // } else if (isNaN(Number(values.age))) {
-  //   errors.age = 'Must be a number'
-  // } else if (Number(values.age) < 18) {
-  //   errors.age = 'Sorry, you must be at least 18 years old'
-  // }
 
   return errors
 }
@@ -121,7 +110,6 @@ function mapStateToProps(state) {
   return {
     session: state.session,
     form: state.form.createAccount,
-
   }
 }
 export default reduxForm({

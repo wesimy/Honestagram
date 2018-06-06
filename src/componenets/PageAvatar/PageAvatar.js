@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './PageAvatar.css';
 import { Card, Button } from 'antd';
-import placeholder from '../../media/png/vintage-bg.png';
+import placeholder from '../../media/png/avatar.png';
 const PageAvatar = ({ datasource }) => {
 
     return (
