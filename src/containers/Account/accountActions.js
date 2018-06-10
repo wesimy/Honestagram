@@ -1,4 +1,4 @@
-import { twitterProvider,facebookProvider, googleProvider, auth, database } from '../../config/firebase';
+import {  database } from '../../config/firebase';
 import _ from 'lodash';
 
 export function createAccount(data, callback = ()=>{}) {

@@ -8,8 +8,9 @@ export default  {
       resetpassword: "/resetpassword",
       settings: "/account/settings",
       createaccount: "/account/create",
-      posts: "/posts",
+      notifications: "/notifications",
       wall: "/wall",
+      createwall: "/wall/create",
     }
 
 

@@ -8,7 +8,7 @@
                 color: white;
                 &:hover,
                 &:active {
-                    color: $secondary
+                    color: $primary;
                 }
             }
         }
@@ -42,10 +42,10 @@
                 width: 25px;
             }
             &:hover {
-                background: lighten($primary,7%);
+                background: rgba($primary-light,0.5);
             }
             &.active {
-                color: $third;
+                //color: ;
             }
         }
         @media (min-width: map-get($breakpoints, md)) {

@@ -17,7 +17,7 @@ class Dashboard extends Component {
     return (
      <div>
       <DashboardWalls datasource={this.props.dashboard}/>
-      <Link to={routes.createaccount} > new wall</Link>
+      <Link to={routes.createwall} > new wall</Link>
      </div>
     )
   }

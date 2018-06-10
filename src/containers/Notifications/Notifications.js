@@ -5,7 +5,7 @@ class Posts extends Component {
   render() {
     return (
       <div>
-        
+        notifications
       </div>
     )
   }

@@ -71,10 +71,21 @@ $xxs-font: (
 ////////////////
 
 $text: #343e48;
-$primary: #9c342e;
-$secondary: #fad251;
-$third: #449d55;
+$primary: #8acde0;
+$primary-dark:   #52a0b3;
+$primary-light:  #d9eeef;
+$accent:         #FF5722;
+
+$white:   #FFFFFF;
 $grey: #666666;
 $light-grey: #c2c2c2;
 $lighter-grey: #fbfbfb;
 $grey-bg: #f6f6f6;
+
+
+
+$danger:#F44336;
+$success: #4CAF50;
+$warning:#FFEB3B;
+
+$cubic: cubic-bezier(.59,.01,.01,1.01);

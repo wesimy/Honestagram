@@ -1,0 +1,70 @@
+.tile {
+    position: absolute;
+    display: none;
+    perspective: 300px;
+    transform-style: preserve-3d;
+    &.from-top {
+        display: block;
+        perspective-origin: 50% 0;
+        .inlay {
+            transform-origin: 50% 0 0;
+            transform: rotateX(-90deg);
+        }
+    }
+    &.from-bottom {
+        display: block;
+        perspective-origin: 50% 100%;
+        .inlay {
+            transform-origin: 50% 100% 0;
+            transform: rotateX(90deg);
+        }
+    }
+    &.from-left {
+        display: block;
+        perspective-origin: 0 50%;
+        .inlay {
+            transform-origin: 0 50% 0;
+            transform: rotateY(90deg);
+        }
+    }
+    &.from-right {
+        display: block;
+        perspective-origin: 100% 50%;
+        .inlay {
+            transform-origin: 100% 50% 0;
+            transform: rotateY(-90deg);
+        }
+	}
+	
+	.inlay{
+		&.show {
+			transform: rotateX(0) rotateY(0);
+			.cover {
+				background-color: transparent;
+			}
+		}
+	}
+}
+
+.inlay {
+    width: 100%;
+    height: 100%;
+    transition: all 0.3s ease-in-out;
+}
+
+.cover {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    transition: background-color 0.3s ease-in-out;
+}
+
+#spread{
+	position: absolute;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+}

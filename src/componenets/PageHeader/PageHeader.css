@@ -1,11 +1,11 @@
 .app-header {
   z-index: 10; }
   .app-header .uk-navbar-container {
-    background: #9c342e; }
+    background: #8acde0; }
     .app-header .uk-navbar-container .uk-iconnav a {
       color: white; }
       .app-header .uk-navbar-container .uk-iconnav a:hover, .app-header .uk-navbar-container .uk-iconnav a:active {
-        color: #fad251; }
+        color: #8acde0; }
   .app-header .brand {
     margin: 20px 30px 10px 30px; }
     .app-header .brand h1 {
@@ -25,9 +25,7 @@
       .app-header .uk-iconnav a img {
         width: 25px; }
       .app-header .uk-iconnav a:hover {
-        background: #b83d36; }
-      .app-header .uk-iconnav a.active {
-        color: #449d55; }
+        background: rgba(217, 238, 239, 0.5); }
     @media (min-width: 960px) {
       .app-header .uk-iconnav {
         margin: 15px 30px 15px 0; }

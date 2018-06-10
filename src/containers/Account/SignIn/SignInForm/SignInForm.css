@@ -1,0 +1,42 @@
+.sign-in-form p {
+  font-weight: 200;
+  font-size: 20px; }
+  @media screen and (min-width: 0) {
+    .sign-in-form p {
+      font-size: 20px; } }
+  @media screen and (min-width: 960px) {
+    .sign-in-form p {
+      font-size: 22px; } }
+  @media screen and (min-width: 1200px) {
+    .sign-in-form p {
+      font-size: 24px; } }
+
+.sign-in-form .uk-inline {
+  width: 100%; }
+
+.sign-in-form .uk-input {
+  color: white;
+  background: rgba(255, 255, 255, 0.15);
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  font-weight: 200;
+  font-size: 11px; }
+  @media screen and (min-width: 0) {
+    .sign-in-form .uk-input {
+      font-size: 11px; } }
+  @media screen and (min-width: 960px) {
+    .sign-in-form .uk-input {
+      font-size: 13px; } }
+  @media screen and (min-width: 1200px) {
+    .sign-in-form .uk-input {
+      font-size: 14px; } }
+  .sign-in-form .uk-input::placeholder {
+    color: white; }
+  .sign-in-form .uk-input.uk-form-danger {
+    border-bottom: 1px solid #F44336; }
+
+.sign-in-form .uk-button {
+  width: 100%; }
+
+.sign-in-form .uk-form-icon {
+  color: white; }

@@ -15,7 +15,6 @@ class Wall extends Component {
 }
 
   componentDidMount() {
-    console.log(this.props.match.params.wid);
     this.props.fetchWall(this.props.match.params.wid, this.props.fetchWallPosts(this.props.match.params.wid))
   }
   

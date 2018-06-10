@@ -6,7 +6,7 @@ export default function(state = {}, action){
 
         // case 'NEW_WALL_POST':
         // return {...state}
-
+        
         case 'FETCH_WALL_INFO':
         case 'SET_WALL_INFO':
         return { ...state, info: action.payload};

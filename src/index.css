@@ -1,3 +1,4 @@
+@import url(~swiper/dist/css/swiper.min.css);
 @import url(~uikit/dist/css/uikit.min.css);
 @import url(~antd/dist/antd.css);
 @font-face {
@@ -44,6 +45,9 @@ body {
   color: #666666;
   background: #f6f6f6; }
 
+#root {
+  height: 100%; }
+
 a {
   -moz-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
@@ -56,7 +60,9 @@ a {
 .app {
   position: relative; }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   font-family: "Open Sans"; }
 
 .brand h1 {
@@ -87,7 +93,7 @@ h1, h2, h3 {
     left: 50%;
     top: 50%;
     transform: translateX(-50%) translateY(-50%);
-    color: rgba(0, 0, 0, 0.5); }
+    color: rgba(0, 0, 0, 0.3); }
   .brand h1 img {
     position: absolute;
     right: -0.5em;
@@ -100,56 +106,75 @@ h1, h2, h3 {
 .bg-white {
   background-color: white; }
 
-.uk-button-primary {
-  background-color: #9c342e; }
-
-.uk-button-secondary {
-  background-color: #fad251;
-  color: #ad8505; }
-  .uk-button-secondary:hover, .uk-button-secondary:focus {
-    background-color: #f9c51f;
-    color: #ad8505; }
-
-.uk-button-third {
-  background-color: #449d55;
-  color: white !important; }
-  .uk-button-third:hover, .uk-button-third:focus {
-    background-color: #357942;
-    color: white; }
-  .uk-button-third:disabled {
-    opacity: 0.5; }
+.button-accent {
+  transition: all 0.5s;
+  position: relative;
+  color: white;
+  background: #FF5722; }
+  .button-accent span {
+    position: relative;
+    z-index: 1; }
+  .button-accent:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    transition: all 0.2s; }
+  .button-accent:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0;
+    transition: all 0.2s;
+    background-color: rgba(255, 87, 34, 0.5);
+    transform: scale(1.1, 1.6); }
+  .button-accent:hover:before {
+    opacity: 0;
+    transform: scale(0.5, 0.5); }
+  .button-accent:hover:after {
+    opacity: 1;
+    transform: scale(1, 1); }
 
 .button-social-login {
   width: auto;
   display: inline-block;
-  padding: 0 18px 0 6px;
+  padding: 0 6px;
   border: 0 none;
   text-decoration: none;
   transition: all 250ms linear;
-  margin-bottom: 12px;
+  cursor: pointer;
   margin-right: 12px;
   color: white;
   height: 45px;
   line-height: 41px;
   position: relative;
-  text-align: left; }
+  text-align: left;
+  font-size: 12px; }
+  @media screen and (min-width: 0) {
+    .button-social-login {
+      font-size: 12px; } }
+  @media screen and (min-width: 960px) {
+    .button-social-login {
+      font-size: 14px; } }
+  @media screen and (min-width: 1200px) {
+    .button-social-login {
+      font-size: 16px; } }
   .button-social-login:hover {
     text-decoration: none; }
   .button-social-login > span {
-    margin-right: 12px;
-    font-size: 24px;
     line-height: 24px;
     width: 42px;
     height: 24px;
     text-align: center;
     display: inline-block;
-    position: relative;
-    top: 4px; }
-    .button-social-login > span:before {
-      display: inline-block;
-      width: 40px; }
-    .button-social-login > span:after {
-      content: ""; }
+    position: relative; }
 
 .button-facebook {
   background-color: #4b70ab;
