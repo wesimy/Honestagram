@@ -28,7 +28,7 @@
             position: relative;
             z-index: 2;
             background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMTUuOTIgMjAuNzEiPjx0aXRsZT5Bc3NldCA0PC90aXRsZT48ZyBpZD0iTGF5ZXJfMiIgZGF0YS1uYW1lPSJMYXllciAyIj48ZyBpZD0iTGF5ZXJfMyIgZGF0YS1uYW1lPSJMYXllciAzIj48cG9seWdvbiBwb2ludHM9IjAgMCAwIDEzLjI1IDAgMjAuNzEgMTE1Ljg3IDE5LjQzIDExNS45MiAwIDAgMCIgZmlsbD0iI2ZmZiIvPjxwb2x5Z29uIHBvaW50cz0iMCA1Ljg4IDguMzcgMjAuNjEgMy43MSAyMC43MSAwIDUuODgiIGZpbGw9IiNjZmNkYzQiLz48L2c+PC9nPjwvc3ZnPg==);
-            background-color: white;
+            background-color: $white;
             background-repeat: no-repeat;
             background-position: bottom center;
             background-size: 100% auto;
@@ -68,7 +68,7 @@ $paperColor: hsl(0, 0%, 95%);
     margin: auto;
     #plate {
         z-index: 3;
-        background: white;
+        background: $white;
         transform: rotateY(-180deg);
         position: relative;
         box-sizing: border-box;

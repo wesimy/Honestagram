@@ -5,7 +5,7 @@
         background: $primary;
         .uk-iconnav {
             a {
-                color: white;
+                color: $white;
                 &:hover,
                 &:active {
                     color: $primary;
@@ -17,7 +17,7 @@
     .brand {
         margin: 20px 30px 10px 30px;
         h1 {
-            color: white;
+            color: $white;
         }
         
     }
@@ -35,7 +35,7 @@
             }
             border-radius: 50%;
             position: relative;
-            color: white;
+            color: $white;
             overflow: hidden;
            
             img {

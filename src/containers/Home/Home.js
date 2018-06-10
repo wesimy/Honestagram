@@ -27,8 +27,7 @@ class Home extends Component {
   }
 
   componentDidMount() {
-    console.log('didmount');
-
+   
     let swiperV = new Swiper('.swiper-container-v', {
       direction: 'vertical',
       speed: 800,
@@ -42,9 +41,7 @@ class Home extends Component {
     });
 
     swiperV.on('slideChange', () => {
-      //console.log(this);
       spread(this.state.spreadColors[swiperV.activeIndex]);
-
     });
 
     let swiperH = new Swiper('.swiper-container-h', {

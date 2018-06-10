@@ -1,0 +1,96 @@
+.uk-input {
+    
+    //color: $white;
+    background: rgba($grey-bg, 0.5);
+    border: none;
+    border-bottom: 1px solid rgba($light-grey, 0.5);
+    font-weight: 200;
+    @include font-size($xs-font);
+    &::placeholder{
+        color: $light-grey;
+    }
+    &.uk-form-danger{
+        border-bottom: 1px solid $danger;
+    }
+    &:focus,
+    &:active,
+    {
+        border-bottom: 1px solid $light-grey;
+       
+    }
+}
+.uk-textarea {
+    //    width: 100%;
+    //color: $grey;
+    background: rgba($light-grey, 0.5);
+    border: none;
+    border-bottom: 1px solid rgba($light-grey, 0.5);
+    font-weight: 200;
+    @include font-size($xs-font);
+    &::placeholder{
+        color: $light-grey;
+    }
+    &.uk-form-danger{
+        border-bottom: 1px solid $danger;
+    }
+    &:focus{
+        background: rgba($light-grey, 0.5);
+        border-bottom: 1px solid $light-grey;
+        color: $white;
+    }
+}
+
+
+
+.form-dark {
+    color: $white;
+    a{
+        color:$white;
+    }
+    p{
+        font-weight: 200;
+        @include font-size($lg-font);
+    }
+    .uk-inline {
+        width: 100%;
+    }
+    .uk-input {
+        //    width: 100%;
+        color: $white;
+        background: rgba(white, 0.15);
+        border-color:rgba(white, 0.5);
+        &::placeholder{
+            color: rgba($white,0.75);
+        }
+        &:focus,
+        &:active,
+        {
+            background: rgba(white, 0.25);
+            border-color:  $white;
+        }
+    }
+    .uk-textarea {
+        //    width: 100%;
+        min-height: 100px;
+        color: $white;
+        background: rgba(white, 0.15);
+       border-bottom: 1px solid rgba(white, 0.5);
+       
+        @include font-size($xs-font);
+        &::placeholder{
+            color: rgba($white,0.75);
+        }
+        &:focus{
+            background: rgba(white, 0.25);
+            border-color: $white;
+            color: $white;
+        }
+    }
+    
+    .uk-button{
+        width: 100%;
+    }
+    .uk-form-icon {
+        color: $white;
+    }
+}

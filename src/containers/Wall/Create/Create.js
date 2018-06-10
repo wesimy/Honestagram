@@ -27,6 +27,7 @@ class CreateWall extends Component {
       uid: this.props.session.user.uid,
       isPrivate: false,
       isArchive: false,
+      isProfile: false,
     }
     this.props.initialize(initialValues);
   }

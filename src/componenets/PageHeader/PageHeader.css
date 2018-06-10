@@ -3,13 +3,13 @@
   .app-header .uk-navbar-container {
     background: #8acde0; }
     .app-header .uk-navbar-container .uk-iconnav a {
-      color: white; }
+      color: #FFFFFF; }
       .app-header .uk-navbar-container .uk-iconnav a:hover, .app-header .uk-navbar-container .uk-iconnav a:active {
         color: #8acde0; }
   .app-header .brand {
     margin: 20px 30px 10px 30px; }
     .app-header .brand h1 {
-      color: white; }
+      color: #FFFFFF; }
   .app-header .uk-iconnav {
     margin: 15px 15px 15px 0; }
     .app-header .uk-iconnav li:first-child {
@@ -18,7 +18,7 @@
       text-align: center;
       border-radius: 50%;
       position: relative;
-      color: white;
+      color: #FFFFFF;
       overflow: hidden; }
       .app-header .uk-iconnav a svg {
         margin: 2px; }

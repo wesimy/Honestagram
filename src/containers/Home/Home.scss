@@ -43,11 +43,11 @@
             }
         }
         &.home-slide-0 {
-            color: white;
+            color: $white;
             h1 {
                 @include font-size($xxxxl-font);
                 margin: 0 auto 0.5em;
-                color: white;
+                color: $white;
             }
             a {
                 color: $white;
@@ -129,11 +129,11 @@
             }
         }
         &.home-slide-3 {
-            color: white;
+            color: $white;
             h1 {
                 @include font-size($xxxxl-font);
                 margin: 0 auto 0.5em;
-                color: white;
+                color: $white;
             }
             a {
                 color: $white;
@@ -142,7 +142,7 @@
             h2 {
                 transform: translateY(-50%);
                 transition-delay: 1s;
-                color: white;
+                color: $white;
               
             }
             form {
@@ -171,7 +171,6 @@
         }
     }
 }
-
 .swiper-pagination{
     .swiper-pagination-bullet{
         background: $white;

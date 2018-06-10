@@ -14,15 +14,12 @@ class SessionSignIn extends Component {
     
     return (
 
-    <div className="uk-position-center uk-overlay uk-overlay-default">
+      <div className="uk-position-center uk-overlay uk-overlay-default">
 
-      <div className="uk-container">
-        
+      <div className="uk-container ">
         <SignInForm />
+        </div></div>
 
-      </div>
-      </div>
-   
     )
   }
 }

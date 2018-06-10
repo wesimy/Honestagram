@@ -26,8 +26,6 @@ export default () => {
     return (
         <div className="swiper-container swiper-container-h">
             <div className="swiper-wrapper">
-
-
                 <div className="swiper-slide step-01">
                     <div className="uk-width-large">
                         <div className="step-images">

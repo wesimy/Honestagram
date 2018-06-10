@@ -1,5 +1,5 @@
-@import url(~swiper/dist/css/swiper.min.css);
 @import url(~uikit/dist/css/uikit.min.css);
+@import url(~swiper/dist/css/swiper.min.css);
 @import url(~antd/dist/antd.css);
 @font-face {
   font-family: 'OrigramPro';
@@ -35,17 +35,228 @@
   font-weight: 200;
   font-style: normal; }
 
-html {
-  background: #f6f6f6; }
+.button-accent {
+  transition: all 0.5s;
+  position: relative;
+  color: white;
+  background: #FF5722; }
+  .button-accent span {
+    position: relative;
+    z-index: 1; }
+  .button-accent:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    transition: all 0.2s; }
+  .button-accent:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0;
+    transition: all 0.2s;
+    background-color: rgba(255, 87, 34, 0.5);
+    transform: scale(1.1, 1.6); }
+  .button-accent:hover:before {
+    opacity: 0;
+    transform: scale(0.5, 0.5); }
+  .button-accent:hover:after {
+    opacity: 1;
+    transform: scale(1, 1); }
+
+.bg-white {
+  background-color: #FFFFFF; }
+
+.bg-primary {
+  background-color: #8acde0; }
+
+.button-social-login {
+  width: auto;
+  display: inline-block;
+  padding: 0 6px;
+  border: 0 none;
+  text-decoration: none;
+  transition: all 250ms linear;
+  cursor: pointer;
+  margin-right: 12px;
+  color: #FFFFFF;
+  height: 45px;
+  line-height: 41px;
+  position: relative;
+  text-align: left;
+  font-size: 12px; }
+  @media screen and (min-width: 0) {
+    .button-social-login {
+      font-size: 12px; } }
+  @media screen and (min-width: 960px) {
+    .button-social-login {
+      font-size: 14px; } }
+  @media screen and (min-width: 1200px) {
+    .button-social-login {
+      font-size: 16px; } }
+  .button-social-login:hover {
+    text-decoration: none; }
+  .button-social-login > span {
+    line-height: 24px;
+    width: 42px;
+    height: 24px;
+    text-align: center;
+    display: inline-block;
+    position: relative; }
+
+.button-facebook {
+  background-color: #4b70ab;
+  border: 1px solid #3b5988; }
+  .button-facebook > span:after {
+    border-right: 1px solid #6b8bbe; }
+  .button-facebook:hover {
+    background-color: #436499; }
+
+.button-twitter {
+  background-color: #3B94D9;
+  border: 1px solid #257abc; }
+  .button-twitter > span:after {
+    border-right: 1px solid #66abe1; }
+  .button-twitter:hover {
+    background-color: #2988d2; }
+
+.button-googleplus {
+  background-color: #DD4B39;
+  border: 1px solid #c23321; }
+  .button-googleplus > span:after {
+    border-right: 1px solid #e47365; }
+  .button-googleplus:hover {
+    background-color: #d73925; }
+
+progress {
+  padding: 1px;
+  border: 0 none;
+  background: #d9eeef !important;
+  box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.25), 0px 1px 0px rgba(255, 255, 255, 0.2);
+  height: 10px !important; }
+
+progress::-webkit-progress-bar {
+  background: transparent !important; }
+
+progress::-webkit-progress-value {
+  box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.25), 0px 1px 0px rgba(255, 255, 255, 0.2);
+  background: #FF5722 !important;
+  height: 10px !important; }
+
+.uk-input {
+  background: rgba(246, 246, 246, 0.5);
+  border: none;
+  border-bottom: 1px solid rgba(194, 194, 194, 0.5);
+  font-weight: 200;
+  font-size: 11px; }
+  @media screen and (min-width: 0) {
+    .uk-input {
+      font-size: 11px; } }
+  @media screen and (min-width: 960px) {
+    .uk-input {
+      font-size: 13px; } }
+  @media screen and (min-width: 1200px) {
+    .uk-input {
+      font-size: 14px; } }
+  .uk-input::placeholder {
+    color: #c2c2c2; }
+  .uk-input.uk-form-danger {
+    border-bottom: 1px solid #F44336; }
+  .uk-input:focus, .uk-input:active {
+    border-bottom: 1px solid #c2c2c2; }
+
+.uk-textarea {
+  background: rgba(194, 194, 194, 0.5);
+  border: none;
+  border-bottom: 1px solid rgba(194, 194, 194, 0.5);
+  font-weight: 200;
+  font-size: 11px; }
+  @media screen and (min-width: 0) {
+    .uk-textarea {
+      font-size: 11px; } }
+  @media screen and (min-width: 960px) {
+    .uk-textarea {
+      font-size: 13px; } }
+  @media screen and (min-width: 1200px) {
+    .uk-textarea {
+      font-size: 14px; } }
+  .uk-textarea::placeholder {
+    color: #c2c2c2; }
+  .uk-textarea.uk-form-danger {
+    border-bottom: 1px solid #F44336; }
+  .uk-textarea:focus {
+    background: rgba(194, 194, 194, 0.5);
+    border-bottom: 1px solid #c2c2c2;
+    color: #FFFFFF; }
+
+.form-dark {
+  color: #FFFFFF; }
+  .form-dark a {
+    color: #FFFFFF; }
+  .form-dark p {
+    font-weight: 200;
+    font-size: 20px; }
+    @media screen and (min-width: 0) {
+      .form-dark p {
+        font-size: 20px; } }
+    @media screen and (min-width: 960px) {
+      .form-dark p {
+        font-size: 22px; } }
+    @media screen and (min-width: 1200px) {
+      .form-dark p {
+        font-size: 24px; } }
+  .form-dark .uk-inline {
+    width: 100%; }
+  .form-dark .uk-input {
+    color: #FFFFFF;
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.5); }
+    .form-dark .uk-input::placeholder {
+      color: rgba(255, 255, 255, 0.75); }
+    .form-dark .uk-input:focus, .form-dark .uk-input:active {
+      background: rgba(255, 255, 255, 0.25);
+      border-color: #FFFFFF; }
+  .form-dark .uk-textarea {
+    min-height: 100px;
+    color: #FFFFFF;
+    background: rgba(255, 255, 255, 0.15);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    font-size: 11px; }
+    @media screen and (min-width: 0) {
+      .form-dark .uk-textarea {
+        font-size: 11px; } }
+    @media screen and (min-width: 960px) {
+      .form-dark .uk-textarea {
+        font-size: 13px; } }
+    @media screen and (min-width: 1200px) {
+      .form-dark .uk-textarea {
+        font-size: 14px; } }
+    .form-dark .uk-textarea::placeholder {
+      color: rgba(255, 255, 255, 0.75); }
+    .form-dark .uk-textarea:focus {
+      background: rgba(255, 255, 255, 0.25);
+      border-color: #FFFFFF;
+      color: #FFFFFF; }
+  .form-dark .uk-button {
+    width: 100%; }
+  .form-dark .uk-form-icon {
+    color: #FFFFFF; }
 
 body {
   margin: 0;
   padding: 0;
   font-family: "Open Sans";
-  color: #666666;
-  background: #f6f6f6; }
+  color: #343e48; }
 
 #root {
+  background: #8acde0;
   height: 100%; }
 
 a {
@@ -103,99 +314,5 @@ h3 {
 .uk-tooltip {
   background-color: rgba(0, 0, 0, 0.8); }
 
-.bg-white {
-  background-color: white; }
-
-.button-accent {
-  transition: all 0.5s;
-  position: relative;
-  color: white;
-  background: #FF5722; }
-  .button-accent span {
-    position: relative;
-    z-index: 1; }
-  .button-accent:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    transition: all 0.2s; }
-  .button-accent:after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    opacity: 0;
-    transition: all 0.2s;
-    background-color: rgba(255, 87, 34, 0.5);
-    transform: scale(1.1, 1.6); }
-  .button-accent:hover:before {
-    opacity: 0;
-    transform: scale(0.5, 0.5); }
-  .button-accent:hover:after {
-    opacity: 1;
-    transform: scale(1, 1); }
-
-.button-social-login {
-  width: auto;
-  display: inline-block;
-  padding: 0 6px;
-  border: 0 none;
-  text-decoration: none;
-  transition: all 250ms linear;
-  cursor: pointer;
-  margin-right: 12px;
-  color: white;
-  height: 45px;
-  line-height: 41px;
-  position: relative;
-  text-align: left;
-  font-size: 12px; }
-  @media screen and (min-width: 0) {
-    .button-social-login {
-      font-size: 12px; } }
-  @media screen and (min-width: 960px) {
-    .button-social-login {
-      font-size: 14px; } }
-  @media screen and (min-width: 1200px) {
-    .button-social-login {
-      font-size: 16px; } }
-  .button-social-login:hover {
-    text-decoration: none; }
-  .button-social-login > span {
-    line-height: 24px;
-    width: 42px;
-    height: 24px;
-    text-align: center;
-    display: inline-block;
-    position: relative; }
-
-.button-facebook {
-  background-color: #4b70ab;
-  border: 1px solid #3b5988; }
-  .button-facebook > span:after {
-    border-right: 1px solid #6b8bbe; }
-  .button-facebook:hover {
-    background-color: #436499; }
-
-.button-twitter {
-  background-color: #3B94D9;
-  border: 1px solid #257abc; }
-  .button-twitter > span:after {
-    border-right: 1px solid #66abe1; }
-  .button-twitter:hover {
-    background-color: #2988d2; }
-
-.button-googleplus {
-  background-color: #DD4B39;
-  border: 1px solid #c23321; }
-  .button-googleplus > span:after {
-    border-right: 1px solid #e47365; }
-  .button-googleplus:hover {
-    background-color: #d73925; }
+.uk-overlay-default {
+  background-color: rgba(255, 255, 255, 0.1); }

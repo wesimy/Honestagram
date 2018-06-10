@@ -41,35 +41,42 @@ class AvatarUploader extends Component {
 
 
 
-
-      <div className="avatar-uploader">
+<React.Fragment>
+<div className="avatar-uploader">
         
           
-              <form>
+        <form>
 
-                <label>
-                    <img src={(this.state.avatarURL) ? this.state.avatarURL : this.props.placeholder} alt=""/>
-                  <FileUploader
-                    accept="image/*"
-                    name="avatar"
-                    randomizeFilename
-                    storageRef={this.storageRef}
-                    onUploadStart={this.handleUploadStart}
-                    onUploadError={this.handleUploadError}
-                    onUploadSuccess={this.handleUploadSuccess}
-                    onProgress={this.handleProgress}
-                    hidden
-                  />
-                  <span data-uk-icon="pencil"></span>
-                </label>
+          <label>
+              <img src={(this.state.avatarURL) ? this.state.avatarURL : this.props.placeholder} alt=""/>
+            <FileUploader
+              accept="image/*"
+              name="avatar"
+              randomizeFilename
+              storageRef={this.storageRef}
+              onUploadStart={this.handleUploadStart}
+              onUploadError={this.handleUploadError}
+              onUploadSuccess={this.handleUploadSuccess}
+              onProgress={this.handleProgress}
+              hidden
+            />
+            <span data-uk-icon="pencil"></span>
+          </label>
 
-              </form>
-                {this.state.isUploading &&
-                  <p>Progress: {this.state.progress}</p>
-                }
-           
-  
-      </div>
+        </form>
+       
+          
+        <progress  className={(this.state.isUploading)? `uk-progress loading` :`uk-progress`} value={this.state.progress} max="100"></progress>
+
+</div>
+
+ 
+ 
+
+
+              
+</React.Fragment>
+      
     )
   }
 }

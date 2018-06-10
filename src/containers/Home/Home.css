@@ -33,11 +33,11 @@
     .swiper-container-v .swiper-slide.swiper-slide-active > .uk-container {
       transition-delay: 1s !important; }
     .swiper-container-v .swiper-slide.home-slide-0 {
-      color: white; }
+      color: #FFFFFF; }
       .swiper-container-v .swiper-slide.home-slide-0 h1 {
         font-size: 52px;
         margin: 0 auto 0.5em;
-        color: white; }
+        color: #FFFFFF; }
         @media screen and (min-width: 0) {
           .swiper-container-v .swiper-slide.home-slide-0 h1 {
             font-size: 52px; } }
@@ -98,11 +98,11 @@
         height: 100%;
         width: 100%; }
     .swiper-container-v .swiper-slide.home-slide-3 {
-      color: white; }
+      color: #FFFFFF; }
       .swiper-container-v .swiper-slide.home-slide-3 h1 {
         font-size: 52px;
         margin: 0 auto 0.5em;
-        color: white; }
+        color: #FFFFFF; }
         @media screen and (min-width: 0) {
           .swiper-container-v .swiper-slide.home-slide-3 h1 {
             font-size: 52px; } }
@@ -117,7 +117,7 @@
       .swiper-container-v .swiper-slide.home-slide-3 h2 {
         transform: translateY(-50%);
         transition-delay: 1s;
-        color: white; }
+        color: #FFFFFF; }
       .swiper-container-v .swiper-slide.home-slide-3 form .uk-form-controls {
         transform: translateY(50%);
         transition-delay: 1s; }

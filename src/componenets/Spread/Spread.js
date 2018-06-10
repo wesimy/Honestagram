@@ -6,7 +6,7 @@ import './Spread.css';
  */
 
 
-//const container = document.getElementById("spread");
+const spreadDiv = document.getElementById("spread");
 
 let orientation = {
 	TOP: 0,
@@ -102,12 +102,9 @@ function Tile( x, y, color, onComplete ) {
 		for ( var i = 0; i < neighbors.length; i++ ) {
 
 			if ( neighbors[ i ] && ! neighbors[ i ].isShown() ) {
-
 				neighbors[ i ][ getFunctionName( i ) ]();
-
 				setTimeout( onTransitionEnd, random( 10, 300 ) );
 				break;
-
 			}
 
 		}
@@ -157,13 +154,18 @@ function changeSlide( event ) {
 	var controller = new Controller( div, size, position );
 
 	controller.onComplete( function() {
-
-		document.getElementById("spread").style.backgroundColor = controller.getColor();
-		document.getElementById("spread").removeChild( div );
+		
+		if(document.getElementById("spread")){
+			document.getElementById("spread").style.backgroundColor = controller.getColor();
+			document.getElementById("spread").removeChild( div );
+		}
+		
 
 	} );
 
+	if(document.getElementById("spread")){
 	document.getElementById("spread").appendChild( div );
+	}
 
 }
 
