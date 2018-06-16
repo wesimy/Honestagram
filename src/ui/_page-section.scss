@@ -1,0 +1,15 @@
+.page-section{
+    .section-header{
+        h2{
+            font-weight: 200;
+            @include font-size($lg-font);
+            padding:  1em 0;
+            color:$light-grey;
+        }
+        a{
+            color:$grey;
+            @include font-size($xs-font);
+        }
+    }
+    .section-body{}
+}

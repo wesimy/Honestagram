@@ -1,28 +1,34 @@
 @import '../../theme/_index.scss';
 .app-header {
     z-index: 10;
+    flex: 0 1 auto;
+    
+    .uk-sticky{
+        background: $primary;
+    }
     .uk-navbar-container {
         background: $primary;
         .uk-iconnav {
             a {
+                transition: all 0.5s ease-in-out;
                 color: $white;
                 &:hover,
                 &:active {
-                    color: $primary;
+                    color: $white;
                 }
             }
         }
     } // .uk-navbar-sticky {
     // }
     .brand {
-        margin: 20px 30px 10px 30px;
+        margin: 20px 0 10px;
         h1 {
             color: $white;
         }
         
     }
     .uk-iconnav {
-        margin: 15px 15px 15px 0;
+        margin: 15px 0;
         li {
             &:first-child {
                 margin-right: 5px;
@@ -31,7 +37,7 @@
         a {
             text-align: center; 
             svg {
-                margin: 2px;
+                margin: 8px;
             }
             border-radius: 50%;
             position: relative;
@@ -39,10 +45,11 @@
             overflow: hidden;
            
             img {
-                width: 25px;
+                width: 30px;
             }
             &:hover {
                 background: rgba($primary-light,0.5);
+               // color: $accent;
             }
             &.active {
                 //color: ;
@@ -54,7 +61,7 @@
             a {
                 
                 svg {
-                    margin: 6px;
+                    margin: 8px;
                 }
                 img {
                     width: 35px;

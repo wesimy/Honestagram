@@ -1,11 +1,23 @@
 .content-profile .uk-card-media-top {
   margin: 0 auto; }
-  .content-profile .uk-card-media-top img {
-    transform: translateY(-50%);
-    margin-bottom: -55%; }
+  .content-profile .uk-card-media-top a {
+    margin: -100px auto 0 auto;
+    display: block;
+    width: 200px;
+    height: 200px;
+    overflow: hidden; }
+    .content-profile .uk-card-media-top a img {
+      height: 100%;
+      margin: 0 auto;
+      width: auto;
+      max-width: initial;
+      transform: translateX(-50%);
+      position: relative;
+      left: 50%; }
 
-.content-profile .uk-card-body h3 {
-  margin: 0; }
-
-.content-profile .uk-card-body p {
-  margin: 0; }
+.content-profile .uk-card-body {
+  padding: 15px 0 0; }
+  .content-profile .uk-card-body h3 {
+    margin: 0; }
+  .content-profile .uk-card-body p {
+    margin: 0; }

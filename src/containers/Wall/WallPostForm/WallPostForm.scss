@@ -32,14 +32,15 @@
             background-repeat: no-repeat;
             background-position: bottom center;
             background-size: 100% auto;
-            padding: 30px 0px 60px;
+            //padding: 30px 0px 60px;
             
             textarea {
                 border: none;
                 background: none;
                 height: 140px;
-                background: #fcfcfc;
+            //    background: #fcfcfc;
                 padding: 20px;
+                color:$text;
                 @include font-size($md-font);
                 @include sm{
                     @include font-size($lg-font);

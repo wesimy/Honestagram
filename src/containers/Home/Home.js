@@ -3,7 +3,6 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import routes from '../../config/routes';
 import { Redirect } from 'react-router-dom';
-import { Link } from 'react-router-dom';
 import Swiper from 'swiper';
 
 import spread from '../../componenets/Spread/Spread';

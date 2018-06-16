@@ -1,6 +1,4 @@
 import { database } from '../../config/firebase';
-import _ from 'lodash';
-
 
 export function createWall(data, callback = ()=>{}) {
     const accountDB = database.ref(`/walls`);
@@ -24,16 +22,18 @@ export function createWall(data, callback = ()=>{}) {
 
 
 // Fetch Wall Data
-export function fetchWall(wid,callback=()=>{}) {
+export function fetchWall(wid,uid,callback=()=>{}) {
     
     const wallDB = database.ref(`/walls/${wid}`);
     return dispatch => {
         wallDB.once('value', snapshot => {
-            console.log(snapshot.val());
             const data = snapshot.val()? snapshot.val(): {}
             dispatch({
                 type: 'FETCH_WALL_INFO',
-                payload: data
+                payload: {
+                    info: data,
+                    isOwner: data.uid === uid
+                }
             });
         }).then(()=>{
             callback()

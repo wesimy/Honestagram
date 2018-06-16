@@ -1,15 +1,13 @@
 import React, { Component } from 'react'
 import { Field, reduxForm } from 'redux-form'
 import { connect } from 'react-redux';
-import { Input, Button } from 'antd';
 import { Link } from 'react-router-dom';
 import _ from 'lodash';
 import routes from '../../../config/routes';
-import AntdFormField from '../../../hoc/AntdFormField/AntdFormField';
+
 import { newWallPost } from '../wallActions';
 import './WallPostForm.css';
 
-const ATextArea = AntdFormField(Input.TextArea);
 class WallPostForm extends Component {
     renderField(field) {
         return (
@@ -22,6 +20,7 @@ class WallPostForm extends Component {
             ...values,
             wall: this.props.wid,
             author: this.props.session.account.uid,
+            owner: this.props.wall.info.uid,
             date: Date.now(),
             isPublic: true,
             isAnonymous: true,
@@ -75,51 +74,39 @@ class WallPostForm extends Component {
                             {
                                 (this.props.session.isAuthenticated) ?
                                     (
-
                                         <div className="paperplane-input">
-                                        <div id="plate" className="front">
-                                        <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
-                                            
-                                                <Field className="uk-textarea" name="content" type="textarea" label={`say something to ${this.props.wall.info.displayName}`} component={this.renderField} />
-                                            
-                                            <button className="uk-button uk-button uk-button-third" type="submit" disabled={!this.props.valid} >Post</button>
-                                        </form>
-                                        </div>
-                                        
-                                          <div className="paperplane-wrapper">
-                                            <div id="container" className="beginning">
-                                              <div id="left-wing">
-                                                <div className="top_left curvable"> </div>
-                                                <div className="bottom_left curvable"> </div>
-                                                <div className="wing wing1"></div>
-                                                <div className="wing wing2"></div>
-                                              </div>
-                                
-                                              <div id="right-wing">
-                                                <div className="top_right curvable"> </div>
-                                                <div className="bottom_right curvable"> </div>
-                                                <div className="wing wing3"></div>
-                                                <div className="wing wing4"></div>
-                                              </div>
-                                
+                                            <div id="plate" className="front">
+                                                <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
+                                                    <Field className="uk-textarea" name="content" type="textarea" label={`say something to ${this.props.wall.info.displayName}`} component={this.renderField} />
+                                                    <button className="uk-button button-accent" type="submit" disabled={!this.props.valid} >Post</button>
+                                                </form>
                                             </div>
-                                          </div>
-                                    
-                                      </div>
+                                            <div className="paperplane-wrapper">
+                                                <div id="container" className="beginning">
+                                                    <div id="left-wing">
+                                                        <div className="top_left curvable"> </div>
+                                                        <div className="bottom_left curvable"> </div>
+                                                        <div className="wing wing1"></div>
+                                                        <div className="wing wing2"></div>
+                                                    </div>
 
-                                        
-                                    ) : (
-                                        <form>
-                                          
-                                                <textarea className="uk-textarea"></textarea>
-                                          
+                                                    <div id="right-wing">
+                                                        <div className="top_right curvable"> </div>
+                                                        <div className="bottom_right curvable"> </div>
+                                                        <div className="wing wing3"></div>
+                                                        <div className="wing wing4"></div>
+                                                    </div>
 
-                                            <div className="uk-overlay-default uk-position-cover">
-                                                <div className="uk-position-center">
-                                                    <Link className="uk-button uk-button uk-button-third" to={routes.signin} >Sign in to post <span data-uk-icon="icon: sign-in"></span></Link>
                                                 </div>
                                             </div>
-                                        </form>
+                                        </div>
+                                    ) : (
+                                        <div className="uk-felx uk-flex-center uk-margin" data-uk-grid>
+                                            <div>
+                                                <Link className="uk-button  button-dark" to={routes.signin} >Sign in to post <span data-uk-icon="icon: sign-in"></span></Link>
+                                                <p>your identity stays anonymous after you are signed in</p>
+                                            </div>
+                                        </div>
 
                                     )
                             }

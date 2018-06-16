@@ -1,5 +1,6 @@
 
-import _ from 'lodash';
+//import _ from 'lodash';
+
 let initState = {walls:[]};
 export default function(state = {...initState}, action){
     switch (action.type){

@@ -4,16 +4,11 @@ import { connect } from 'react-redux';
 import routes from '../../../config/routes';
 import { createAccount } from '../accountActions';
 import { createWall } from '../../Wall/wallActions';
-import AntdFormField from '../../../hoc/AntdFormField/AntdFormField';
-import { Input, Switch, Form, Select, Checkbox, Button } from "antd";
+
 import MasterPage from '../../../hoc/MasterPage/MasterPage';
-import { Upload, Icon, message } from 'antd';
 import AvatarUploader from '../../../componenets/AvatarUploader/AvatarUploader';
-import PageCover from '../../../componenets/PageCover/PageCover';
 import placeholder from '../../../media/png/avatar.png';
 import { renderInput, renderTextArea } from '../../../util/renderFormFields';
-
-const ATextArea = AntdFormField(Input.TextArea);
 
 class CreateAccount extends Component {
   constructor(props) {

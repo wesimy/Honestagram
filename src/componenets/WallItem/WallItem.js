@@ -1,26 +1,41 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
 import moment from 'moment';
 import routes from '../../config/routes';
-export default ({ id,datasource }) => {
+import SocialShare from '../SocialShare/SocialShare';
+import './WallItem.css';
+
+const WallItem =  ({ id, datasource }) => {
+    
     return (
 
-        <article className="uk-card-default uk-comment uk-visible-toggle uk-padding">
+        <article className="uk-card-default uk-comment uk-box-shadow-small wall-item">
             <header className="uk-comment-header uk-position-relative">
-                <div className="uk-grid-medium uk-flex-middle" data-uk-grid>
-                    <div className="uk-width-auto">
-                        <img className="uk-comment-avatar" src={datasource.photoURL} width="70" height="70" alt="" />
-                    </div>
+                <div className="uk-grid-collapse uk-flex-middle" data-uk-grid>
+                    
+                        <a href={`${routes.wall}/${id}`}>
+                        <div className="uk-cover-container ">
+                            <img className="" src={datasource.photoURL} alt="" data-uk-cover />
+                        </div>
+                            </a>
+
+      
                     <div className="uk-width-expand">
-                        <h4 className="uk-comment-title uk-margin-remove">{datasource.displayName}</h4>
-                        <a href={`${routes.wall}/${id}`}>Goto wall</a>
-                        {/* <p className="uk-comment-meta uk-margin-remove-top">{moment(datasource.date).fromNow()  }</p> */}
+                        <div className="wrapper">
+                        <p className="uk-text-meta">{moment(datasource.date).fromNow()}</p>
+                        <h3 className="uk-comment-title uk-margin-remove"><a href={`${routes.wall}/${id}`}>{datasource.displayName}</a></h3>
+                        
+                        <SocialShare datasource={datasource} size={25} shareurl={`${routes.wall}/${id}`}/>
+                        </div>
+                        
                     </div>
                 </div>
-
+                
+                
             </header>
         </article>
 
 
     )
 }
+
+export default WallItem;

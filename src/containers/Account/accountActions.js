@@ -1,5 +1,5 @@
 import {  database } from '../../config/firebase';
-import _ from 'lodash';
+//import _ from 'lodash';
 
 export function createAccount(data, callback = ()=>{}) {
     const accountDB = database.ref(`/accounts`);

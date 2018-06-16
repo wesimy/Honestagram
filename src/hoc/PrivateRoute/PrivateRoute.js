@@ -36,7 +36,7 @@ class PrivateRoute extends Component {
           
         }
 
-        else if(this.props.session.isAuthenticated && !this.props.session.account.uid && this.props.location.pathname == routes.createaccount){
+        else if(this.props.session.isAuthenticated && !this.props.session.account.uid && this.props.location.pathname === routes.createaccount){
           return (
             <Component {...props} />
           )

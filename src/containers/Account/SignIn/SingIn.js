@@ -1,11 +1,7 @@
 import React, { Component } from 'react'
-import { Field, reduxForm } from 'redux-form'
 import {connect} from 'react-redux';
-import {Link} from 'react-router-dom';
-
 import withoutAuth from '../../../hoc/WithoutAuth/WithoutAuth';
 import MasterPage from '../../../hoc/MasterPage/MasterPage';
-import {renderInput} from '../../../util/renderFormFields';
 import SignInForm from './SignInForm/SignInForm';
 class SessionSignIn extends Component {
 

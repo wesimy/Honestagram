@@ -7,7 +7,6 @@ export default ({ datasource = {}, orderby = 'date', order='desc' }) => {
     
     const postList = _.map(_.orderBy(datasource,[orderby],[order]),
         (item, id) => {
-            console.log(item);
             const post = { id: id, ...item};
             return(
                 <li id={id} key={id} >

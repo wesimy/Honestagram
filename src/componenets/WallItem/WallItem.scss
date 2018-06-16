@@ -1,0 +1,53 @@
+@import '../../theme/_index.scss';
+
+.wall-item{
+    .uk-cover-container{
+        width: 120px;
+        height: 120px;
+    }
+    img{
+        border-radius: 4px 0 0 4px;
+    }
+    .wrapper{
+        padding: 15px;
+        .uk-text-meta{
+            @include font-size($xxs-font);
+        }
+        h3{
+            @include font-size($md-font);
+            padding: 5px 10px;
+            margin: 0;
+            //font-weight: 600;
+            a{
+                display: block;
+                color:$grey;
+                cursor: pointer;
+                &:hover{
+                    color:$accent;
+                }
+            }
+        }
+        p{
+            margin: 0;
+            padding: 0 10px;
+            @include font-size($xs-font);
+            a{
+                color: $light-grey;
+            }
+        }
+        .uk-iconnav{
+            
+            margin: 5px 0;
+            padding: 0;
+        }
+    }
+    .social-toggle{
+        //color:$white;
+        //background: $accent;
+        border-radius: 0 4px 0 4px;
+        padding: 0 10px;
+        //height: 100%;
+        
+    }
+    
+}

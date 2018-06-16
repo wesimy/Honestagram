@@ -7,9 +7,9 @@ import { renderInput } from '../../../../util/renderFormFields';
 import './SignInForm.css';
 
 class SignInForm extends Component {
-    constructor(props) {
-        super(props);
-    }
+    // constructor(props) {
+    //     super(props);
+    // }
     onSubmit(values) {
         this.props.emailSignin(values.email, values.password).catch(err => {
             // UIkit.notification(err, {status: 'danger'});  

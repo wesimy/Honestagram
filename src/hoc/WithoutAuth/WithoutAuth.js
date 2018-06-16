@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import {Redirect} from 'react-router-dom';
-import {bindActionCreators} from 'redux';
+//import {bindActionCreators} from 'redux';
 //import {onSignin} from '../../containers/AuthWrapper/authWrapperActions';
 import routes from '../../config/routes';
 

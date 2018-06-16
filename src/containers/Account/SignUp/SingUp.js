@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
-import { Field, reduxForm } from 'redux-form'
-import routes from '../../../config/routes';
+
 import withoutAuth from '../../../hoc/WithoutAuth/WithoutAuth';
 import MasterPage from '../../../hoc/MasterPage/MasterPage';
 import SignUpForm from './SignUpForm/SignUpForm';
@@ -12,7 +11,6 @@ class SignUp extends Component {
     });
   }
   render() {
-    const { handleSubmit, pristine, reset, submitting } = this.props;
     return (
       <div className="uk-position-center uk-overlay uk-overlay-default">
 

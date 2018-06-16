@@ -1,30 +1,36 @@
-@import './theme/_index.scss';
 @import './media/fonts/fonts.scss';
 @import './ui/_index.scss';
 @import '~uikit/dist/css/uikit.min.css';
 @import "~swiper/dist/css/swiper.min.css";
-@import '~antd/dist/antd.css';
+//@import '~antd/dist/antd.css';
+@import './theme/_index.scss';
 
 html {
+    height: 100%;
 }
 body {
     margin: 0;
     padding: 0;
     font-family: "Open Sans";
     color: $text;
+    height: 100%;
 }
 #root {
     background: $primary;
     height: 100%;
+    display: flex;
+    flex-flow: column;
 }
 
 a {
-    @include transition(all 0.3s ease-in-out);
+    color:$accent;
+    //@include transition(all 0.3s ease-in-out);
+    &:hover{
+        text-decoration: none;
+    }
 }
 
-#root {
-    min-height: 100%;
-}
+
 
 .app {
     position: relative;

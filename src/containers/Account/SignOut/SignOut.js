@@ -6,9 +6,9 @@ import { signout } from '../../AuthWrapper/authWrapperActions';
 import MasterPage from '../../../hoc/MasterPage/MasterPage';
 
 class SignOut extends Component {
-    constructor(props) {
-        super(props);
-    }
+    // constructor(props) {
+    //     super(props);
+    // }
 
     componentWillMount() {
         this.props.signout();

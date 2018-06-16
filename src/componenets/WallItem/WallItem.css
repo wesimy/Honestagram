@@ -1,0 +1,61 @@
+.wall-item .uk-cover-container {
+  width: 120px;
+  height: 120px; }
+
+.wall-item img {
+  border-radius: 4px 0 0 4px; }
+
+.wall-item .wrapper {
+  padding: 15px; }
+  .wall-item .wrapper .uk-text-meta {
+    font-size: 10px; }
+    @media screen and (min-width: 0) {
+      .wall-item .wrapper .uk-text-meta {
+        font-size: 10px; } }
+    @media screen and (min-width: 960px) {
+      .wall-item .wrapper .uk-text-meta {
+        font-size: 11px; } }
+    @media screen and (min-width: 1200px) {
+      .wall-item .wrapper .uk-text-meta {
+        font-size: 12px; } }
+  .wall-item .wrapper h3 {
+    font-size: 14px;
+    padding: 5px 10px;
+    margin: 0; }
+    @media screen and (min-width: 0) {
+      .wall-item .wrapper h3 {
+        font-size: 14px; } }
+    @media screen and (min-width: 960px) {
+      .wall-item .wrapper h3 {
+        font-size: 16px; } }
+    @media screen and (min-width: 1200px) {
+      .wall-item .wrapper h3 {
+        font-size: 18px; } }
+    .wall-item .wrapper h3 a {
+      display: block;
+      color: #666666;
+      cursor: pointer; }
+      .wall-item .wrapper h3 a:hover {
+        color: #FF5722; }
+  .wall-item .wrapper p {
+    margin: 0;
+    padding: 0 10px;
+    font-size: 11px; }
+    @media screen and (min-width: 0) {
+      .wall-item .wrapper p {
+        font-size: 11px; } }
+    @media screen and (min-width: 960px) {
+      .wall-item .wrapper p {
+        font-size: 13px; } }
+    @media screen and (min-width: 1200px) {
+      .wall-item .wrapper p {
+        font-size: 14px; } }
+    .wall-item .wrapper p a {
+      color: #c2c2c2; }
+  .wall-item .wrapper .uk-iconnav {
+    margin: 5px 0;
+    padding: 0; }
+
+.wall-item .social-toggle {
+  border-radius: 0 4px 0 4px;
+  padding: 0 10px; }

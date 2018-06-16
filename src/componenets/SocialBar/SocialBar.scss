@@ -1,0 +1,36 @@
+
+.social {
+    
+    position: fixed;
+    top:50%;
+    right: 0;
+    z-index: 5;
+    list-style: none;
+    transform: translateY(-50%);
+    li{
+        a {
+            display: block;
+            height: 20px;
+            width: 40px;
+            background: #222;
+            border-bottom: 1px solid #333;
+            
+            color: #fff;
+            -webkit-font-smoothing: antialiased;
+            padding: 10px;
+            text-decoration: none;
+            text-align: center;
+            transition: background .5s ease .300ms
+          }
+    }
+      
+  }
+  
+  .social li:first-child a:hover { background: #3b5998 }
+  .social li:nth-child(2) a:hover { background: #00acee }
+  .social li:nth-child(3) a:hover { background: #ea4c89 }
+  .social li:nth-child(4) a:hover { background: #dd4b39 }
+  
+  .social li:first-child a { border-radius:5px 0 0  0}
+  .social li:last-child a { border-radius:   0  0 0 5px }
+      

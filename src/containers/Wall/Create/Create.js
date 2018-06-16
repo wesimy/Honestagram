@@ -4,11 +4,9 @@ import { connect } from 'react-redux';
 import routes from '../../../config/routes';
 import { createWall } from '../wallActions';
 import AntdFormField from '../../../hoc/AntdFormField/AntdFormField';
-import { Switch, Form, Input, Select, Checkbox, Button } from "antd";
+import { Input, Button } from "antd";
 import MasterPage from '../../../hoc/MasterPage/MasterPage';
-import { Upload, Icon, message } from 'antd';
 import AvatarUploader from '../../../componenets/AvatarUploader/AvatarUploader';
-import PageCover from '../../../componenets/PageCover/PageCover';
 import placeholder from '../../../media/png/avatar.png';
 
 const AInput = AntdFormField(Input);

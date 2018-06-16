@@ -1,5 +1,5 @@
 
-import _ from 'lodash';
+//import _ from 'lodash';
 
 export default function(state = {}, action){
     switch (action.type){
@@ -9,7 +9,7 @@ export default function(state = {}, action){
         
         case 'FETCH_WALL_INFO':
         case 'SET_WALL_INFO':
-        return { ...state, info: action.payload};
+        return { ...state, info: action.payload.info, isOwner: action.payload.isOwner};
 
         case 'FETCH_WALL_POSTS':
         return  { ...state, posts: action.payload};

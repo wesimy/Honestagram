@@ -1,6 +1,6 @@
 
+@import '../theme/_index.scss';
 .button-accent {
-    
     transition: all 0.5s;
     position: relative;
     color:white;
@@ -36,8 +36,57 @@
         transform: scale(1.1, 1.6);
     }
     &:hover {
-     //   color:$accent;
-     
+        color:$white;
+        &:before {
+            opacity: 0;
+            transform: scale(0.5, 0.5);
+        }
+        &:after {
+            opacity: 1;
+            transform: scale(1, 1);
+        }
+    }
+}
+
+
+.button-dark {
+    
+    transition: all 0.5s;
+    position: relative;
+    color:white;
+    background:$primary-dark;
+    span{
+        position: relative;
+        z-index: 1;
+    }
+    &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        
+        transition: all 0.2s ;
+        
+    }
+    &:after {
+        color:$white;
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        opacity: 0;
+        transition: all 0.2s ;
+        background-color: rgba($primary-dark,0.5);
+        transform: scale(1.1, 1.6);
+    }
+    &:hover {
+        color:$white;
         &:before {
             opacity: 0;
             transform: scale(0.5, 0.5);

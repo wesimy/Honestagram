@@ -1,11 +1,12 @@
 import React from 'react'
-import {Link} from 'react-router-dom';
 import moment from 'moment';
+import './WallPostItem.css';
 
-export default ({datasource}) => {
+export default ({ datasource}) => {
+
   return (
 
-<article className="uk-card-default uk-comment uk-visible-toggle uk-padding">
+<article className="uk-card-default uk-comment uk-visible-toggle uk-padding-small post-item">
         <header className="uk-comment-header uk-position-relative">
             <div className="uk-grid-medium uk-flex-middle" data-uk-grid>
                 <div className="uk-width-auto">
@@ -16,7 +17,21 @@ export default ({datasource}) => {
                     <p className="uk-comment-meta uk-margin-remove-top">{moment(datasource.date).fromNow()  }</p>
                 </div>
             </div>
-          
+            
+           {/* {isOwner && */}
+            <div className="uk-position-top-right ">
+                <button className="uk-link-muted" data-uk-icon="more" href="#"></button>
+                <div uk-dropdown="boundary: .uk-comment;mode: click" >
+                    <ul className="uk-nav uk-dropdown-nav">
+                        <li><a href="#"><i data-uk-icon="lock"></i> Make Private</a></li>
+                        <li><a href="#"><i data-uk-icon="unlock"></i> Make Public</a></li>
+                        <li><a href="#"><i data-uk-icon="mask"></i> Request Identity</a></li>
+                        <li><a href="#"><i data-uk-icon="social"></i> Share</a></li>
+                    </ul>
+                </div>
+            </div> 
+            {/* } */}
+
         </header>
         <div className="uk-comment-body">
             <p>{datasource.content}</p>

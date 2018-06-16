@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { Field, reduxForm } from 'redux-form'
 import { connect } from 'react-redux';
-import routes from '../../../../config/routes';
 import { signup } from '../../../AuthWrapper/authWrapperActions';
 import { renderInput } from '../../../../util/renderFormFields';
 import UIkit from 'uikit';
@@ -32,7 +31,7 @@ class SignUpForm extends Component {
                                     <fieldset className="uk-fieldset">
 
                                         <div className="uk-margin">
-                                            <Field className="uk-input" name="email" type="email" placeholder="Email" placeholder="Email" icon="mail" component={renderInput} />
+                                            <Field className="uk-input" name="email" type="email" placeholder="Email" icon="mail" component={renderInput} />
                                         </div>
 
                                         <div className="uk-margin">

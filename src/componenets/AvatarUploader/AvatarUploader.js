@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Upload, message, Button, Icon } from 'antd';
+
 import { storage } from '../../config/firebase';
 import FileUploader from 'react-firebase-file-uploader';
 import './AvatarUploader.css';

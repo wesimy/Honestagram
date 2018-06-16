@@ -1,0 +1,12 @@
+@import '../../theme/_index.scss';
+.post-item {
+    .uk-dropdown-nav{
+        padding: 0;
+        a{
+            transition: color 0.3s ease-in-out;
+            &:hover{
+                color:$accent;
+            }
+        }
+    }
+}
