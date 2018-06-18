@@ -1,4 +1,5 @@
 export default  {
+      baseurl: "https://www.honestgram.com",
       default: "/dashboard",
       home: "/",
       dashboard: "/dashboard",

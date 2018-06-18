@@ -70,7 +70,7 @@ class WallPostForm extends Component {
 
                 <div className="content-form-post uk-flex-center uk-grid-collapse" data-uk-grid>
                     <div className="uk-child-expand@s uk-width-4-5@m uk-width-3-5@l">
-                        <div className="form-wrapper">
+                        <div className="form-wrapper uk-margin-top">
                             {
                                 (this.props.session.isAuthenticated) ?
                                     (
@@ -101,10 +101,10 @@ class WallPostForm extends Component {
                                             </div>
                                         </div>
                                     ) : (
-                                        <div className="uk-felx uk-flex-center uk-margin" data-uk-grid>
-                                            <div>
-                                                <Link className="uk-button  button-dark" to={routes.signin} >Sign in to post <span data-uk-icon="icon: sign-in"></span></Link>
-                                                <p>your identity stays anonymous after you are signed in</p>
+                                        <div className="uk-felx uk-flex-center" data-uk-grid>
+                                            <div className="uk-text-center">
+                                                <Link className="uk-button  button-dark" to={routes.signin} >Sign in to say something <span data-uk-icon="icon: sign-in"></span></Link>
+                                                <p className="uk-text-meta">your identity stays anonymous after you are signed in</p>
                                             </div>
                                         </div>
 

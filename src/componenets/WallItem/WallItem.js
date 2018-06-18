@@ -24,7 +24,7 @@ const WallItem =  ({ id, datasource }) => {
                         <p className="uk-text-meta">{moment(datasource.date).fromNow()}</p>
                         <h3 className="uk-comment-title uk-margin-remove"><a href={`${routes.wall}/${id}`}>{datasource.displayName}</a></h3>
                         
-                        <SocialShare datasource={datasource} size={25} shareurl={`${routes.wall}/${id}`}/>
+                        <SocialShare datasource={datasource} size={25} shareurl={`${routes.baseurl}${routes.wall}/${id}`}/>
                         </div>
                         
                     </div>

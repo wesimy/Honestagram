@@ -6,7 +6,7 @@ import './Spread.css';
  */
 
 
-const spreadDiv = document.getElementById("spread");
+//const spreadDiv = document.getElementById("spread");
 
 let orientation = {
 	TOP: 0,

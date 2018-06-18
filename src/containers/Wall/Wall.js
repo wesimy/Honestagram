@@ -8,7 +8,6 @@ import WallPosts from './WallPosts/WallPosts';
 import PageCover from '../../componenets/PageCover/PageCover';
 import PageAvatar from '../../componenets/PageAvatar/PageAvatar';
 import SocialShare from '../../componenets/SocialShare/SocialShare';
-
 class Wall extends Component {
   constructor(props) {
     super(props);
@@ -27,7 +26,7 @@ class Wall extends Component {
   }
 
   onNewWallPostHandler() {
-    this.props.fetchWallPosts(this.props.match.params.wid,this.props.session.account.uid);
+    this.props.fetchWallPosts(this.props.match.params.wid);
   }
 
   render() {
@@ -54,7 +53,11 @@ class Wall extends Component {
 
         <div className="uk-margin">
           <div className="uk-container">
+            
+
             <WallPosts wid={this.props.match.params.wid} datasource={this.props.wall.posts} />
+
+          }
           </div>
         </div>
 

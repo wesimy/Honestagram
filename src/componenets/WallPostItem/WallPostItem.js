@@ -2,7 +2,7 @@ import React from 'react'
 import moment from 'moment';
 import './WallPostItem.css';
 
-export default ({ datasource}) => {
+export default ({ isOwner, datasource}) => {
 
   return (
 
@@ -10,7 +10,12 @@ export default ({ datasource}) => {
         <header className="uk-comment-header uk-position-relative">
             <div className="uk-grid-medium uk-flex-middle" data-uk-grid>
                 <div className="uk-width-auto">
-                    <img className="uk-comment-avatar" src="https://getuikit.com/docs/images/avatar.jpg" width="70" height="70" alt="" />
+                    {
+                        (datasource.isAnonymous)? 
+                        <span data-uk-icon="icon:mask;ratio:2"></span>
+                        :
+                        <img className="uk-comment-avatar" src="https://getuikit.com/docs/images/avatar.jpg" width="70" height="70" alt="" />
+                    }
                 </div>
                 <div className="uk-width-expand">
                     <h4 className="uk-comment-title uk-margin-remove">{(datasource.isAnonymous)? 'Anonymous' : datasource.author}</h4>
@@ -18,7 +23,7 @@ export default ({ datasource}) => {
                 </div>
             </div>
             
-           {/* {isOwner && */}
+           {isOwner &&
             <div className="uk-position-top-right ">
                 <button className="uk-link-muted" data-uk-icon="more" href="#"></button>
                 <div uk-dropdown="boundary: .uk-comment;mode: click" >
@@ -30,7 +35,7 @@ export default ({ datasource}) => {
                     </ul>
                 </div>
             </div> 
-            {/* } */}
+           } 
 
         </header>
         <div className="uk-comment-body">

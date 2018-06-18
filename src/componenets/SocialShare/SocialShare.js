@@ -15,10 +15,10 @@ import {
 } from 'react-share';
 
 export default ({ datasource, size , shareurl = window.location.href,responsive = true }) => {
-
+    console.log(shareurl);
     return (
         <ul className="uk-iconnav">
-            <li data-uk-tooltip="Share on Facebook" className=""><FacebookShareButton quote={datasource.wallDescription} url={shareurl}><FacebookIcon size={size} /></FacebookShareButton></li>
+            <li data-uk-tooltip="Share on Facebook" className=""><FacebookShareButton quote={datasource.displayName} url={shareurl}><FacebookIcon size={size} /></FacebookShareButton></li>
             <li data-uk-tooltip="Share on Twitter" className=""><TwitterShareButton hashtags={["honestgram"]} title={datasource.displayName} url={shareurl}><TwitterIcon size={size} /></TwitterShareButton></li>
             <li data-uk-tooltip="Share on Linkedin" className=""><LinkedinShareButton title={datasource.displayName} description={datasource.wallDescription} url={shareurl}><LinkedinIcon size={size} /></LinkedinShareButton></li>
             <li data-uk-tooltip="Share on Google Plus" className=""><GooglePlusShareButton url={shareurl}><GooglePlusIcon size={size} /></GooglePlusShareButton></li>
@@ -32,7 +32,7 @@ export default ({ datasource, size , shareurl = window.location.href,responsive 
                 <div uk-dropdown="pos: bottom-justify; boundary: .uk-comment-header; boundary-align: true" className="uk-padding-small" >
                     <p>Share on</p>
                     <ul className="uk-iconnav ">
-                        <li data-uk-tooltip="Facebook" ><FacebookShareButton quote={datasource.wallDescription} url={shareurl}><FacebookIcon size={size} /></FacebookShareButton></li>
+                        <li data-uk-tooltip="Facebook" ><FacebookShareButton quote={datasource.displayName} url={shareurl}><FacebookIcon size={size} /></FacebookShareButton></li>
                         <li data-uk-tooltip="Twitter" ><TwitterShareButton hashtags={["honestgram"]} title={datasource.displayName} url={shareurl}><TwitterIcon size={size} /></TwitterShareButton></li>
                         <li data-uk-tooltip="Linkedin" ><LinkedinShareButton title={datasource.displayName} description={datasource.wallDescription} url={shareurl}><LinkedinIcon size={size} /></LinkedinShareButton></li>
                         <li data-uk-tooltip="Google Plus" ><GooglePlusShareButton url={shareurl}><GooglePlusIcon size={size} /></GooglePlusShareButton></li>
