@@ -15,7 +15,12 @@ class Wall extends Component {
       loading: true,
         }
   }
-
+  componentWillUpdate() {
+    this.props.fetchWall(this.props.match.params.wid ,this.props.session.account.uid, () => {
+      this.props.fetchWallPosts(this.props.match.params.wid);
+      
+    });
+  }
   componentDidMount() {
     this.props.fetchWall(this.props.match.params.wid ,this.props.session.account.uid, () => {
       this.props.fetchWallPosts(this.props.match.params.wid);
@@ -57,7 +62,7 @@ class Wall extends Component {
 
             <WallPosts wid={this.props.match.params.wid} datasource={this.props.wall.posts} />
 
-          }
+         
           </div>
         </div>
 

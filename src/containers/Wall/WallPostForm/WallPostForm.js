@@ -111,7 +111,7 @@ class WallPostForm extends Component {
                                     )
                             }
 
-                            {/* <div className="background-wrapper"></div> */}
+                        
                         </div>
                     </div>
                 </div>
