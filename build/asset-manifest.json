@@ -1,8 +1,8 @@
 {
-  "main.css": "static/css/main.e6f8c4bf.css",
-  "main.css.map": "static/css/main.e6f8c4bf.css.map",
-  "main.js": "static/js/main.e172350b.js",
-  "main.js.map": "static/js/main.e172350b.js.map",
+  "main.css": "static/css/main.1657dc9a.css",
+  "main.css.map": "static/css/main.1657dc9a.css.map",
+  "main.js": "static/js/main.bc362c9b.js",
+  "main.js.map": "static/js/main.bc362c9b.js.map",
   "static/media/F.png": "static/media/F.a05ab5fa.png",
   "static/media/G.png": "static/media/G.72e0bafe.png",
   "static/media/In.png": "static/media/In.7700dcee.png",
@@ -26,7 +26,8 @@
   "static/media/Tumb.png": "static/media/Tumb.5804894b.png",
   "static/media/Twitter.png": "static/media/Twitter.644a5a46.png",
   "static/media/Y.png": "static/media/Y.fda9fa6a.png",
-  "static/media/avatar.png": "static/media/avatar.6879220b.png",
+  "static/media/avatar.png": "static/media/avatar.5cb6d173.png",
   "static/media/paper-plane.svg": "static/media/paper-plane.0ee8b8f2.svg",
-  "static/media/paper-speach.svg": "static/media/paper-speach.836b3cbc.svg"
+  "static/media/paper-speach.svg": "static/media/paper-speach.836b3cbc.svg",
+  "static/media/share-your-wall-01.svg": "static/media/share-your-wall-01.60ef4e97.svg"
 }

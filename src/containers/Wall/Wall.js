@@ -16,10 +16,10 @@ class Wall extends Component {
         }
   }
   componentWillUpdate() {
-    this.props.fetchWall(this.props.match.params.wid ,this.props.session.account.uid, () => {
-      this.props.fetchWallPosts(this.props.match.params.wid);
+    // this.props.fetchWall(this.props.match.params.wid ,this.props.session.account.uid, () => {
+    //   this.props.fetchWallPosts(this.props.match.params.wid);
       
-    });
+    // });
   }
   componentDidMount() {
     this.props.fetchWall(this.props.match.params.wid ,this.props.session.account.uid, () => {
@@ -58,9 +58,13 @@ class Wall extends Component {
 
         <div className="uk-margin">
           <div className="uk-container">
-            
+
+              <div className="content-list-post uk-flex-center uk-grid-collapse" data-uk-grid>
+        <div className="uk-child-expand@s uk-width-4-5@m uk-width-3-5@l">            
 
             <WallPosts wid={this.props.match.params.wid} datasource={this.props.wall.posts} />
+            </div>
+            </div>
 
          
           </div>

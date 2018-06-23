@@ -7,22 +7,26 @@ import { createWall } from '../../Wall/wallActions';
 
 import MasterPage from '../../../hoc/MasterPage/MasterPage';
 import AvatarUploader from '../../../componenets/AvatarUploader/AvatarUploader';
-import placeholder from '../../../media/png/avatar.png';
+
+import getAvatar from '../../../util/getAvatar';
 import { renderInput, renderTextArea } from '../../../util/renderFormFields';
 
 class CreateAccount extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      photoURL: placeholder
+      photoURL: getAvatar()
     }
   }
+  getRandomAvatar = ()=>{
+    this.setState({ photoURL: getAvatar() });
+  }
   componentDidMount() {
-    if (this.props.session.user.photoURL) {
-      this.setState({
-        photoURL: this.props.session.user.photoURL
-      })
-    }
+    // if (this.props.session.user.photoURL) {
+    //   this.setState({
+    //     photoURL: this.props.session.user.photoURL
+    //   })
+    // }
 
     let initialValues = {
       displayName: this.props.session.user.displayName,
@@ -30,6 +34,7 @@ class CreateAccount extends Component {
       uid: this.props.session.user.uid,
       isPrivate: false,
       isArchive: false,
+      
     }
     this.props.initialize(initialValues);
   }
@@ -73,7 +78,7 @@ class CreateAccount extends Component {
         <div className="uk-container uk-text-center">
           <div className="uk-flex-center uk-flex">
             <div className="uk-width-medium form-dark">
-              <AvatarUploader onSuccess={this.updateAvatar} placeholder={this.state.photoURL} />
+              <AvatarUploader onSuccess={this.updateAvatar} placeholder={this.state.photoURL} getRandomAvatar={this.getRandomAvatar}/>
               <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
                 <Field name="displayName" type="text" placeholder="Display Name" component={renderInput} />
                 <Field name="wallDescription" component={renderTextArea} placeholder="This is a good place to ask people what you like them to be honest about" />

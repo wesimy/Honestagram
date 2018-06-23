@@ -7,13 +7,15 @@
     height: 200px;
     overflow: hidden; }
     .content-profile .uk-card-media-top a img {
+      background: white;
       height: 100%;
       margin: 0 auto;
       width: auto;
       max-width: initial;
       transform: translateX(-50%);
       position: relative;
-      left: 50%; }
+      left: 50%;
+      border-radius: 100%; }
 
 .content-profile .uk-card-body {
   padding: 15px 0 0; }

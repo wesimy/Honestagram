@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import routes from '../../config/routes';
-import placeholder from '../../media/png/avatar.png';
+import placeholder from '../../media/svg/user-placeholder.svg';
 
 export default ({ isAuth, account }) => {
     

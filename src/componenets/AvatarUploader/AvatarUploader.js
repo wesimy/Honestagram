@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import { storage } from '../../config/firebase';
 import FileUploader from 'react-firebase-file-uploader';
+
 import './AvatarUploader.css';
 
 class AvatarUploader extends Component {
@@ -17,7 +18,7 @@ class AvatarUploader extends Component {
     this.storageRef = storage.ref();
   }
 
-
+  
   handleUploadStart = () => this.setState({ isUploading: true, progress: 0 });
   handleProgress = (progress) => this.setState({ progress });
   handleUploadError = (error) => {
@@ -47,9 +48,10 @@ class AvatarUploader extends Component {
           
         <form>
 
-          <label>
+          
               <img src={(this.state.avatarURL) ? this.state.avatarURL : this.props.placeholder} alt=""/>
-            <FileUploader
+            <div className="avatar-actions">
+            <label  data-uk-tooltip={'title: Upload your own avatar;delay: 250;animation: uk-animation-slide-top-small'} data-uk-icon="image"><FileUploader
               accept="image/*"
               name="avatar"
               randomizeFilename
@@ -59,9 +61,10 @@ class AvatarUploader extends Component {
               onUploadSuccess={this.handleUploadSuccess}
               onProgress={this.handleProgress}
               hidden
-            />
-            <span data-uk-icon="pencil"></span>
-          </label>
+            /></label>
+            <a onClick={this.props.getRandomAvatar} data-uk-icon="refresh" data-uk-tooltip={'title: Get a random avatar;delay: 250;animation: uk-animation-slide-top-small'}></a>
+            </div>
+          
 
         </form>
        

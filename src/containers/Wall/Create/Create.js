@@ -7,7 +7,7 @@ import AntdFormField from '../../../hoc/AntdFormField/AntdFormField';
 import { Input, Button } from "antd";
 import MasterPage from '../../../hoc/MasterPage/MasterPage';
 import AvatarUploader from '../../../componenets/AvatarUploader/AvatarUploader';
-import placeholder from '../../../media/png/avatar.png';
+import getAvatar from '../../../util/getAvatar';
 
 const AInput = AntdFormField(Input);
 const ATextArea = AntdFormField(Input.TextArea);
@@ -16,7 +16,7 @@ class CreateWall extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      photoURL: placeholder
+      photoURL: getAvatar()
     }
   }
   componentDidMount() {
@@ -72,7 +72,7 @@ class CreateWall extends Component {
       <div className="page">
         <div className="bg-white ">
           <div className="uk-container">
-            <AvatarUploader onSuccess={this.updateAvatar} placeholder={placeholder} />
+            <AvatarUploader onSuccess={this.updateAvatar} placeholder={this.state.photoURL} />
             <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
               <Field label="Display Name" name="displayName" component={AInput} placeholder="Display Name" hasFeedback />
               <Field label="Tell us about your wall" name="wallDescription" component={ATextArea} placeholder="This is a good place to ask people what you like them to be honest about" hasFeedback />
