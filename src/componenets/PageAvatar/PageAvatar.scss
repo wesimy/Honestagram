@@ -2,7 +2,14 @@
 .content-profile{
     .uk-card-media-top{
         margin: 0 auto;
-        
+        >img{
+            margin: -100px auto 0 auto;
+            display: block;
+            width: 200px;
+            height: 200px;
+            overflow: hidden;
+            background: white;
+        }
         a{
             margin: -100px auto 0 auto;
             display: block;
@@ -21,7 +28,7 @@
                transform: translateX(-50%);
                position: relative;
                left: 50%;
-               border-radius: 100%;
+              
             }
         }
         

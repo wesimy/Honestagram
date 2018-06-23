@@ -1,0 +1,39 @@
+.photo-uploader {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin: 40px auto; }
+  .photo-uploader img {
+    background: #FFFFFF;
+    height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%); }
+  .photo-uploader .photo-actions {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    opacity: 0;
+    padding: 10px;
+    color: white;
+    transition: 0.3s all ease-in-out; }
+    .photo-uploader .photo-actions label, .photo-uploader .photo-actions a {
+      border-radius: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 8px;
+      margin: 2px;
+      cursor: pointer; }
+  .photo-uploader:hover .photo-actions {
+    opacity: 1; }
+  .photo-uploader progress {
+    transition: all 0.5s ease-in-out;
+    transition-delay: 1s;
+    position: absolute;
+    bottom: -20px;
+    margin: 0;
+    opacity: 0; }
+    .photo-uploader progress.loading {
+      opacity: 1;
+      transition-delay: 0.5s; }

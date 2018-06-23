@@ -49,10 +49,13 @@ class CreateAccount extends Component {
       }
     }
     this.props.createAccount(data, () => {
-      
+      let wallData = {
+        ...data.account,
+        isProfile: true,
+      }
+      console.log(wallData);
       // Create Initial Wall
-      this.props.createWall({...data, isProfile: true}, (wid) => {
-        //this.props.history.push(`${routes.wall}/${wid}`);
+      this.props.createWall({...wallData }, (wid) => {
         this.props.history.push(routes.dashboard);
       });
       
@@ -81,7 +84,7 @@ class CreateAccount extends Component {
               <AvatarUploader onSuccess={this.updateAvatar} placeholder={this.state.photoURL} getRandomAvatar={this.getRandomAvatar}/>
               <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
                 <Field name="displayName" type="text" placeholder="Display Name" component={renderInput} />
-                <Field name="wallDescription" component={renderTextArea} placeholder="This is a good place to ask people what you like them to be honest about" />
+                <Field name="wallDescription" component={renderTextArea} placeholder="This will be displayed on your profile wall below your name" />
                 <button className="uk-button button-accent" type="submit" disabled={submitting}>Create Profile</button>
               </form>
             </div>

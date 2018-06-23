@@ -4,9 +4,8 @@ export function createWall(data, callback = ()=>{}) {
     const accountDB = database.ref(`/walls`);
 
     return dispatch => {
-        let wid =  accountDB.push(data.account)
+        let wid =  accountDB.push(data)
             .once('value', snapshot => {
-                console.log(snapshot.key);
                 dispatch(
                     {
                         type: 'CREATE_WALL',

@@ -1,5 +1,12 @@
 .content-profile .uk-card-media-top {
   margin: 0 auto; }
+  .content-profile .uk-card-media-top > img {
+    margin: -100px auto 0 auto;
+    display: block;
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    background: white; }
   .content-profile .uk-card-media-top a {
     margin: -100px auto 0 auto;
     display: block;
@@ -14,8 +21,7 @@
       max-width: initial;
       transform: translateX(-50%);
       position: relative;
-      left: 50%;
-      border-radius: 100%; }
+      left: 50%; }
 
 .content-profile .uk-card-body {
   padding: 15px 0 0; }

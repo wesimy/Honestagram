@@ -8,6 +8,13 @@ const PageAvatar = ({ datasource }) => {
             <div className="uk-child-expand@s uk-width-4-5@m uk-width-3-5@l">
                 {datasource ? (
                     <div className="uk-card uk-text-center">
+                        {(datasource.isProfile)? 
+                        <div className="uk-card-media-top">
+                        
+                                <img src={datasource.photoURL} alt="" className="uk-border-circle" />
+                        
+                    </div>
+                        :
                         <div className="uk-card-media-top">
                             <div data-uk-lightbox>
                                 <a href={datasource.photoURL}>
@@ -16,6 +23,7 @@ const PageAvatar = ({ datasource }) => {
                             </div>
 
                         </div>
+                        }
                         <div className="uk-card-body">
                             <h3 className="uk-card-title">{datasource.displayName}</h3>
                             <p>{datasource.wallDescription}</p>
