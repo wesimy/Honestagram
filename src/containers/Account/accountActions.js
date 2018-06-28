@@ -47,21 +47,4 @@ export function updateAccount(data, callback = () => { }) {
         });
     }
 
-
-    //accountsDB.ref.update(up);
-    
-    // return dispatch => {
-    //     accountDB.push(data.account)
-    //         .once('value', snapshot => {
-    //             dispatch(
-    //                 {
-    //                     type: 'AUTH_CREATE_ACCOUNT',
-    //                     payload: snapshot.val()
-    //                 }
-    //             );
-    //         }).then(()=>{
-    //             localStorage.setItem("session",JSON.stringify(data));
-    //             callback();
-    //         });
-    // }
 }

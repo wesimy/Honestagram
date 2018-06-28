@@ -2,11 +2,11 @@ import React from 'react'
 import moment from 'moment';
 import './WallPostItem.css';
 
-export default ({ isOwner, datasource}) => {
+export default ({ isOwner, datasource, makePrivate}) => {
 
   return (
 
-<article className="uk-card-default uk-comment uk-visible-toggle uk-padding-small post-item">
+<article className={`uk-card-default uk-comment uk-visible-toggle uk-padding-small post-item ${(!datasource.isPublic)? "post-private" : "post-public"}`}>
         <header className="uk-comment-header uk-position-relative">
             <div className="uk-grid-medium uk-flex-middle" data-uk-grid>
                 <div className="uk-width-auto">
@@ -20,6 +20,7 @@ export default ({ isOwner, datasource}) => {
                 <div className="uk-width-expand">
                     <h4 className="uk-comment-title uk-margin-remove">{(datasource.isAnonymous)? 'Anonymous' : datasource.author}</h4>
                     <p className="uk-comment-meta uk-margin-remove-top">{moment(datasource.date).fromNow()  }</p>
+                    
                 </div>
             </div>
             
@@ -28,8 +29,13 @@ export default ({ isOwner, datasource}) => {
                 <button className="uk-link-muted" data-uk-icon="more" href="#"></button>
                 <div uk-dropdown="boundary: .uk-comment;mode: click" >
                     <ul className="uk-nav uk-dropdown-nav">
-                        <li><a href="#"><i data-uk-icon="lock"></i> Make Private</a></li>
-                        <li><a href="#"><i data-uk-icon="unlock"></i> Make Public</a></li>
+                        {
+                            (datasource.isPublic)?
+                            <li><a href="#" onClick={()=>makePrivate(datasource.pid,true)}><i data-uk-icon="lock"></i> Make Private</a></li>
+                            :
+                            <li><a href="#" onClick={()=>makePrivate(datasource.pid,false)}><i data-uk-icon="unlock"></i> Make Public</a></li>
+                        }
+                        
                         <li><a href="#"><i data-uk-icon="mask"></i> Request Identity</a></li>
                         <li><a href="#"><i data-uk-icon="social"></i> Share</a></li>
                     </ul>

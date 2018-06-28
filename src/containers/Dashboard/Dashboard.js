@@ -6,7 +6,7 @@ import DashboardWalls from './DashboardWalls/DashboardWalls.js'
 import DashboardRequests from './DashboardRequests/DashboardRequests';
 import './Dashboard.css';
 import PageContent from '../../componenets/PageContent/PageContent';
-
+import { database } from '../../config/firebase';
 
 class Dashboard extends Component {
   constructor(props) {
@@ -21,6 +21,19 @@ class Dashboard extends Component {
       this.setState({
         loading: false,
       });
+    });
+
+    // bind live data updates to the wall
+    const postsDB = database.ref(`/walls`).orderByChild("uid").equalTo(this.props.session.account.uid);
+    postsDB.on('value', data => {
+      
+      if (data.val()) {
+        this.props.fetchWalls(this.props.session.account.uid, () => {
+          this.setState({
+            loading: false,
+          });
+        });
+      }
     });
   }
 

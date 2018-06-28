@@ -63,7 +63,7 @@ export function resetPassword(emailAddress) {
     // var auth = firebase.auth();
 
 
-    return dispatch=> auth.sendPasswordResetEmail(emailAddress).then(function () {
+    return dispatch => auth.sendPasswordResetEmail(emailAddress).then(function () {
         dispatch({
             type: "AUTH_RESET_PASSWORD",
             payload: null

@@ -30,7 +30,7 @@ class Wall extends Component {
     // bind live data updates to the wall
     const postsDB = database.ref(`/posts`).orderByChild("wall").equalTo(this.props.match.params.wid);
     postsDB.on('value', data => {
-      console.log('change');
+      
       if (data.val()) {
         this.props.fetchWall(this.props.match.params.wid ,this.props.session.account.uid, () => {
           this.props.fetchWallPosts(this.props.match.params.wid);

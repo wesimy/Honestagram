@@ -16,7 +16,7 @@ export default function(state = {}, action){
 
         case 'AUTH_SIGN_OUT':
         return {};
-
+        
         default:
         return state;
     }

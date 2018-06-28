@@ -24,8 +24,6 @@ export function createWall(data, callback = ()=>{}) {
 export function fetchWall(wid,uid,callback=()=>{}) {
     
     const wallDB = database.ref(`/walls/${wid}`);
-
-
     wallDB.on('value', ()=>{
         console.log('update from on');
     });
@@ -85,5 +83,32 @@ export function newWallPost(data, callback = ()=>{}) {
             });
     }
 
+
+}
+
+
+
+// Data = {key: ,val:}
+export function updatePost(data, callback = () => { }) {
+    
+    // Get The Corresponding User Account 
+    return dispatch => {
+        let updates = {};
+            updates[`/posts/${data.pid}/${data.key}`] = data.val;
+            console.log(data);
+            
+                database.ref().update(updates, function(error) {
+                    if (error) {
+                      // The write failed...
+                      console.log(error);
+                    } else {
+                      dispatch({
+                        type: 'UPDATE_POST',
+                        payload: data
+                    });
+                    }
+                  });
+
+    }
 
 }

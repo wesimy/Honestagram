@@ -5,9 +5,9 @@ import { database } from '../../config/firebase';
 
 
 export function fetchWalls(uid, callback = ()=>{}) {
-    const postsDB = database.ref(`/walls`).orderByChild("uid").equalTo(uid);
+    const wallsDB = database.ref(`/walls`).orderByChild("uid").equalTo(uid);
     return dispatch => {
-        postsDB.once('value', snapshot => {
+        wallsDB.once('value', snapshot => {
             dispatch({
                 type: 'FETCH_WALLS',
                 payload: snapshot.val()
