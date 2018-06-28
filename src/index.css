@@ -185,16 +185,20 @@ progress {
   padding: 1px;
   border: 0 none;
   background: #d9eeef !important;
-  box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.25), 0px 1px 0px rgba(255, 255, 255, 0.2);
+  box-shadow: inset 0px 0px 1px rgba(0, 0, 0, 0.15), 0px 1px 0px rgba(255, 255, 255, 0.2);
   height: 10px !important; }
 
 progress::-webkit-progress-bar {
   background: transparent !important; }
 
 progress::-webkit-progress-value {
-  box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.25), 0px 1px 0px rgba(255, 255, 255, 0.2);
+  box-shadow: inset 0px 0px 1px rgba(0, 0, 0, 0.15), 0px 1px 0px rgba(255, 255, 255, 0.2);
   background: #FF5722 !important;
   height: 10px !important; }
+
+form small {
+  color: #c2c2c2;
+  font-weight: 200; }
 
 .uk-input {
   background: rgba(246, 246, 246, 0.5);
@@ -294,6 +298,47 @@ progress::-webkit-progress-value {
     width: 100%; }
   .form-dark .uk-form-icon {
     color: #FFFFFF; }
+
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 56px;
+  height: 30px; }
+  .switch input {
+    display: none; }
+  .switch input:checked + .slider {
+    background-color: #FF5722; }
+  .switch input:focus + .slider {
+    box-shadow: 0 0 1px #FF5722; }
+  .switch input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px); }
+  .switch .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #f6f6f6;
+    transition: all 0.3s cubic-bezier(0.59, 0.01, 0.01, 1.01);
+    box-shadow: inset 0px 0px 1px rgba(0, 0, 0, 0.15); }
+    .switch .slider:before {
+      position: absolute;
+      content: "";
+      height: 26px;
+      width: 26px;
+      left: 2px;
+      bottom: 2px;
+      background-color: #FFFFFF;
+      transition: all 0.3s cubic-bezier(0.59, 0.01, 0.01, 1.01);
+      box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.15); }
+    .switch .slider.round {
+      border-radius: 34px; }
+      .switch .slider.round:before {
+        border-radius: 50%; }
 
 .page-section .section-header h2 {
   font-weight: 200;

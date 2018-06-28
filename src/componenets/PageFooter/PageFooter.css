@@ -1,0 +1,11 @@
+.app-footer {
+  font-size: 10px; }
+  @media screen and (min-width: 0) {
+    .app-footer {
+      font-size: 10px; } }
+  @media screen and (min-width: 960px) {
+    .app-footer {
+      font-size: 11px; } }
+  @media screen and (min-width: 1200px) {
+    .app-footer {
+      font-size: 12px; } }

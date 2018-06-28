@@ -8,6 +8,9 @@ import WallPosts from './WallPosts/WallPosts';
 import PageCover from '../../componenets/PageCover/PageCover';
 import PageAvatar from '../../componenets/PageAvatar/PageAvatar';
 import SocialShare from '../../componenets/SocialShare/SocialShare';
+
+import { database } from '../../config/firebase';
+
 class Wall extends Component {
   constructor(props) {
     super(props);
@@ -15,12 +18,7 @@ class Wall extends Component {
       loading: true,
         }
   }
-  componentWillUpdate() {
-    // this.props.fetchWall(this.props.match.params.wid ,this.props.session.account.uid, () => {
-    //   this.props.fetchWallPosts(this.props.match.params.wid);
-      
-    // });
-  }
+
   componentDidMount() {
     this.props.fetchWall(this.props.match.params.wid ,this.props.session.account.uid, () => {
       this.props.fetchWallPosts(this.props.match.params.wid);
@@ -28,6 +26,22 @@ class Wall extends Component {
         loading: false,
       });
     });
+
+    // bind live data updates to the wall
+    const postsDB = database.ref(`/posts`).orderByChild("wall").equalTo(this.props.match.params.wid);
+    postsDB.on('value', data => {
+      console.log('change');
+      if (data.val()) {
+        this.props.fetchWall(this.props.match.params.wid ,this.props.session.account.uid, () => {
+          this.props.fetchWallPosts(this.props.match.params.wid);
+          this.setState({
+            loading: false,
+          });
+        });
+      }
+    });
+
+
   }
 
   onNewWallPostHandler() {

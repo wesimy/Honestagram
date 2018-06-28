@@ -22,12 +22,7 @@ class CreateAccount extends Component {
     this.setState({ photoURL: getAvatar() });
   }
   componentDidMount() {
-    // if (this.props.session.user.photoURL) {
-    //   this.setState({
-    //     photoURL: this.props.session.user.photoURL
-    //   })
-    // }
-
+    
     let initialValues = {
       displayName: this.props.session.user.displayName,
       email: this.props.session.user.email,
@@ -46,12 +41,16 @@ class CreateAccount extends Component {
         ...values,
         photoURL: this.state.photoURL,
         date: Date.now(),
+        postNotification: true,
+        identityNotification: true,
+        newsNotification: true,
       }
     }
     this.props.createAccount(data, () => {
       let wallData = {
         ...data.account,
         isProfile: true,
+       
       }
       console.log(wallData);
       // Create Initial Wall

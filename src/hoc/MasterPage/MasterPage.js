@@ -7,32 +7,31 @@ import PageFooter from '../../componenets/PageFooter/PageFooter';
 ////////////////////////////////////////////////////////////////////////////////
 // HOC to add layout to the page
 ////////////////////////////////////////////////////////////////////////////
-export default (Component)=>{
+export default (Component) => {
   class MasterPage extends React.Component {
-    
-    
+
+
     render() {
 
 
-        return(
-           <React.Fragment>
-            <PageHeader/>
-        
-                <Component {...this.props} />
-          
-            </React.Fragment> 
-        )
-        
-        
+      return (
+        <React.Fragment>
+          <PageHeader />
+          <Component {...this.props} />
+          {/* <PageFooter /> */}
+        </React.Fragment>
+      )
+
+
     }
   }
 
   function mapStateToProps(state) {
-    return{
+    return {
       isAuthenticated: state.session.isAuthenticated
     }
   }
-  
+
   return connect(mapStateToProps)(MasterPage);
 }
 
