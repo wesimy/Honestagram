@@ -19,13 +19,12 @@ export function createWall(data, callback = ()=>{}) {
     }
 }
 
-
 // Fetch Wall Data
 export function fetchWall(wid,uid,callback=()=>{}) {
     
     const wallDB = database.ref(`/walls/${wid}`);
     wallDB.on('value', ()=>{
-        console.log('update from on');
+       
     });
     return dispatch => {
         wallDB.once('value', snapshot => {

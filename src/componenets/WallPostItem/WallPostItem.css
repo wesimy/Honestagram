@@ -4,6 +4,3 @@
     transition: color 0.3s ease-in-out; }
     .post-item .uk-dropdown-nav a:hover {
       color: #FF5722; }
-
-.post-item.post-private {
-  opacity: 0.5; }

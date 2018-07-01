@@ -3,7 +3,7 @@ import React from 'react';
 import _ from 'lodash';
 import WallPostItem from '../WallPostItem/WallPostItem';
 
-export default ({ isOwner, datasource = {}, orderby = 'date', order='desc', makePrivate }) => {
+export default ({ isOwner, datasource = {}, orderby = 'date', order='desc', requestIdentity, makePrivate }) => {
     
     //const postList = _.map(_.orderBy(datasource,[orderby],[order]),
     const postMapper = _.map(datasource,
@@ -19,7 +19,7 @@ export default ({ isOwner, datasource = {}, orderby = 'date', order='desc', make
             const post = { pid: id, ...item};
             return(
                 <li id={id} key={id}  >
-                <WallPostItem isOwner={isOwner} datasource={post} makePrivate={makePrivate}/>
+                <WallPostItem isOwner={isOwner} datasource={post} requestIdentity={requestIdentity} makePrivate={makePrivate}/>
                 </li>
             );
         });

@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import routes from '../../config/routes';
 import { Redirect } from 'react-router-dom';
-import Swiper from 'swiper';
+import Swiper from '../../../node_modules/swiper/dist/js/swiper';
 
 import spread from '../../componenets/Spread/Spread';
 import SignInForm from '../Account/SignIn/SignInForm/SignInForm';

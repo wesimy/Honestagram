@@ -4,24 +4,31 @@ import WallPostList from '../../../componenets/WallPostList/WallPostList';
 import './WallPosts.css';
 import ShareYourWall from '../../../media/svg/share-your-wall-01.svg';
 import {updatePost} from '../wallActions';
+import {newNotification} from '../../Notifications/NotificationsActions';
 
 class WallPosts extends Component {
-  // constructor(props){
-  //   super(props);
-  // }
-  // updatePost(p) {
-  //   console.log('update');
-  // }
+
   makePrivate = (pid,val)=>{
     let opt = {
       pid,
       key: 'isPublic',
       val: !val
     }
-    
     this.props.updatePost(opt);
-    //updatePost(val);
+
   }
+
+  requestIdentity = (p)=>{
+    let request = {
+      pid: p.pid,
+      aid: p.author,
+      oid: p.owner,
+      status: "pending",
+    }
+
+    this.props.newNotification(request)
+  }
+
   render() {
 
     return (
@@ -30,7 +37,7 @@ class WallPosts extends Component {
       (this.props.wall.posts) ?
 
         <React.Fragment>
-          <WallPostList isOwner={this.props.wall.isOwner} datasource={this.props.wall.posts} makePrivate={this.makePrivate} />
+          <WallPostList isOwner={this.props.wall.isOwner} datasource={this.props.wall.posts} requestIdentity={this.requestIdentity} makePrivate={this.makePrivate} />
 
         </React.Fragment>
         :
@@ -50,4 +57,4 @@ function mapStateToProps(state) {
   }
 }
 
-export default connect(mapStateToProps,{updatePost})(WallPosts);
+export default connect(mapStateToProps,{updatePost,newNotification})(WallPosts);

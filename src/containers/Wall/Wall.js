@@ -16,11 +16,11 @@ class Wall extends Component {
     super(props);
     this.state = {
       loading: true,
-        }
+    }
   }
 
   componentDidMount() {
-    this.props.fetchWall(this.props.match.params.wid ,this.props.session.account.uid, () => {
+    this.props.fetchWall(this.props.match.params.wid, this.props.session.account.uid, () => {
       this.props.fetchWallPosts(this.props.match.params.wid);
       this.setState({
         loading: false,
@@ -30,9 +30,9 @@ class Wall extends Component {
     // bind live data updates to the wall
     const postsDB = database.ref(`/posts`).orderByChild("wall").equalTo(this.props.match.params.wid);
     postsDB.on('value', data => {
-      
+
       if (data.val()) {
-        this.props.fetchWall(this.props.match.params.wid ,this.props.session.account.uid, () => {
+        this.props.fetchWall(this.props.match.params.wid, this.props.session.account.uid, () => {
           this.props.fetchWallPosts(this.props.match.params.wid);
           this.setState({
             loading: false,
@@ -40,8 +40,6 @@ class Wall extends Component {
         });
       }
     });
-
-
   }
 
   onNewWallPostHandler() {
@@ -49,42 +47,35 @@ class Wall extends Component {
   }
 
   render() {
-   
     return (
-
-<PageContent loading={this.state.loading}>
+      <PageContent loading={this.state.loading}>
         <PageCover />
-      <div className="page">
-    
+        <div className="page">
           <div className="uk-container">
             <PageAvatar datasource={this.props.wall.info} />
-            
-            {this.props.wall.isOwner && 
-            <div className="uk-felx uk-flex-center uk-margin" data-uk-grid>
-              <div>
-              <SocialShare datasource={this.props.wall.info} size={30} responsive={false} shareurl={window.location.href} />
+            {this.props.wall.isOwner &&
+              <div className="uk-felx uk-flex-center uk-margin" data-uk-grid>
+                <div>
+                  <SocialShare datasource={this.props.wall.info} size={30} responsive={false} shareurl={window.location.href} />
+                </div>
               </div>
-            </div>
             }
 
             {!this.props.wall.isOwner && <WallPostForm wid={this.props.match.params.wid} datasource={this.props.wall} onSubmitCallback={() => { this.onNewWallPostHandler() }} />}
           </div>
 
-        <div className="uk-margin">
-          <div className="uk-container">
+          <div className="uk-margin">
+            <div className="uk-container">
 
               <div className="content-list-post uk-flex-center uk-grid-collapse" data-uk-grid>
-        <div className="uk-child-expand@s uk-width-4-5@m uk-width-3-5@l">            
-
-            <WallPosts wid={this.props.match.params.wid} datasource={this.props.wall.posts} />
+                <div className="uk-child-expand@s uk-width-4-5@m uk-width-3-5@l">
+                  <WallPosts wid={this.props.match.params.wid} datasource={this.props.wall.posts} />
+                </div>
+              </div>
             </div>
-            </div>
-
-         
           </div>
-        </div>
 
-      </div>
+        </div>
       </PageContent>
     )
 

@@ -2,7 +2,7 @@ import React from 'react'
 import moment from 'moment';
 import './WallPostItem.css';
 
-export default ({ isOwner, datasource, makePrivate}) => {
+export default ({ isOwner, datasource, requestIdentity, makePrivate}) => {
 
   return (
 
@@ -36,12 +36,18 @@ export default ({ isOwner, datasource, makePrivate}) => {
                             <li><a href="#" onClick={()=>makePrivate(datasource.pid,false)}><i data-uk-icon="unlock"></i> Make Public</a></li>
                         }
                         
-                        <li><a href="#"><i data-uk-icon="mask"></i> Request Identity</a></li>
+                        <li><a href="#" onClick={()=>requestIdentity(datasource)}><i data-uk-icon="mask"></i> Request Identity</a></li>
                         <li><a href="#"><i data-uk-icon="social"></i> Share</a></li>
                     </ul>
                 </div>
             </div> 
            } 
+
+           {
+               !datasource.isPublic &&
+               <div className="uk-position-top-right uk-position-small"><a href="#">Private</a></div>
+
+           }
 
         </header>
         <div className="uk-comment-body">
