@@ -14,11 +14,11 @@ export default ({ isOwner, datasource, requestIdentity, makePrivate}) => {
                         (datasource.isAnonymous)? 
                         <span data-uk-icon="icon:mask;ratio:2"></span>
                         :
-                        <img className="uk-comment-avatar" src="https://getuikit.com/docs/images/avatar.jpg" width="70" height="70" alt="" />
+                        <img className="uk-comment-avatar" src={datasource.author.photoURL} width="70" height="70" alt="" />
                     }
                 </div>
                 <div className="uk-width-expand">
-                    <h4 className="uk-comment-title uk-margin-remove">{(datasource.isAnonymous)? 'Anonymous' : datasource.author}</h4>
+                    <h4 className="uk-comment-title uk-margin-remove">{(datasource.isAnonymous)? 'Anonymous' : datasource.author.displayName}</h4>
                     <p className="uk-comment-meta uk-margin-remove-top">{moment(datasource.date).fromNow()  }</p>
                     
                 </div>
@@ -35,9 +35,13 @@ export default ({ isOwner, datasource, requestIdentity, makePrivate}) => {
                             :
                             <li><a href="#" onClick={()=>makePrivate(datasource.pid,false)}><i data-uk-icon="unlock"></i> Make Public</a></li>
                         }
-                        
+                        {
+                            (datasource.isAnonymous)?
                         <li><a href="#" onClick={()=>requestIdentity(datasource)}><i data-uk-icon="mask"></i> Request Identity</a></li>
-                        <li><a href="#"><i data-uk-icon="social"></i> Share</a></li>
+                        :
+                        false
+                        }
+                        {/* <li><a href="#"><i data-uk-icon="social"></i> Share</a></li> */}
                     </ul>
                 </div>
             </div> 

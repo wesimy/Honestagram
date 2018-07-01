@@ -19,11 +19,17 @@ class WallPosts extends Component {
   }
 
   requestIdentity = (p)=>{
+    
     let request = {
+      fingerprint: p.pid + p.owner,
       pid: p.pid,
       aid: p.author,
       oid: p.owner,
+      content: p.content,
+      wurl: window.location.href,
+      sender: this.props.session.user.displayName,
       status: "pending",
+      date: Date.now(),
     }
 
     this.props.newNotification(request)

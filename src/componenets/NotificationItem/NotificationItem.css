@@ -1,0 +1,6 @@
+.notification-item .uk-dropdown-nav {
+  padding: 0; }
+  .notification-item .uk-dropdown-nav a {
+    transition: color 0.3s ease-in-out; }
+    .notification-item .uk-dropdown-nav a:hover {
+      color: #FF5722; }

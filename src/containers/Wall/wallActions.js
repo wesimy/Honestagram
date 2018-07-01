@@ -23,9 +23,9 @@ export function createWall(data, callback = ()=>{}) {
 export function fetchWall(wid,uid,callback=()=>{}) {
     
     const wallDB = database.ref(`/walls/${wid}`);
-    wallDB.on('value', ()=>{
+    // wallDB.on('value', ()=>{
        
-    });
+    // });
     return dispatch => {
         wallDB.once('value', snapshot => {
             console.log('update from once');
@@ -94,7 +94,9 @@ export function updatePost(data, callback = () => { }) {
     return dispatch => {
         let updates = {};
             updates[`/posts/${data.pid}/${data.key}`] = data.val;
-            console.log(data);
+            if(data.key === "author"){
+                updates[`/posts/${data.pid}/isAnonymous`] = false;
+            }
             
                 database.ref().update(updates, function(error) {
                     if (error) {
