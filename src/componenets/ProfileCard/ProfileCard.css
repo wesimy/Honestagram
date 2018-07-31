@@ -1,0 +1,30 @@
+.profile-card .uk-card-media-top {
+  margin: 0 auto; }
+  .profile-card .uk-card-media-top > img {
+    margin: 60px auto 0;
+    display: block;
+    max-width: 100px;
+    overflow: hidden;
+    background: white; }
+  .profile-card .uk-card-media-top a {
+    margin: -100px auto 0 auto;
+    display: block;
+    width: 200px;
+    height: 200px;
+    overflow: hidden; }
+    .profile-card .uk-card-media-top a img {
+      background: white;
+      height: 100%;
+      margin: 0 auto;
+      width: auto;
+      max-width: initial;
+      transform: translateX(-50%);
+      position: relative;
+      left: 50%; }
+
+.profile-card .uk-card-body {
+  padding: 15px 0 0; }
+  .profile-card .uk-card-body h3 {
+    margin: 0; }
+  .profile-card .uk-card-body p {
+    margin: 0; }

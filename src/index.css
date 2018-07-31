@@ -200,6 +200,41 @@ form small {
   color: #c2c2c2;
   font-weight: 200; }
 
+form.uk-form-large .uk-input,
+form.uk-form-large .uk-textarea {
+  font-size: 20px; }
+  @media screen and (min-width: 0) {
+    form.uk-form-large .uk-input,
+    form.uk-form-large .uk-textarea {
+      font-size: 20px; } }
+  @media screen and (min-width: 960px) {
+    form.uk-form-large .uk-input,
+    form.uk-form-large .uk-textarea {
+      font-size: 22px; } }
+  @media screen and (min-width: 1200px) {
+    form.uk-form-large .uk-input,
+    form.uk-form-large .uk-textarea {
+      font-size: 24px; } }
+  form.uk-form-large .uk-input::placeholder,
+  form.uk-form-large .uk-textarea::placeholder {
+    font-size: 12px; }
+    @media screen and (min-width: 0) {
+      form.uk-form-large .uk-input::placeholder,
+      form.uk-form-large .uk-textarea::placeholder {
+        font-size: 12px; } }
+    @media screen and (min-width: 960px) {
+      form.uk-form-large .uk-input::placeholder,
+      form.uk-form-large .uk-textarea::placeholder {
+        font-size: 14px; } }
+    @media screen and (min-width: 1200px) {
+      form.uk-form-large .uk-input::placeholder,
+      form.uk-form-large .uk-textarea::placeholder {
+        font-size: 16px; } }
+
+form.uk-text-center .uk-input,
+form.uk-text-center .uk-textarea {
+  text-align: center; }
+
 .uk-input {
   background: rgba(246, 246, 246, 0.5);
   border: none;
@@ -216,7 +251,8 @@ form small {
     .uk-input {
       font-size: 14px; } }
   .uk-input::placeholder {
-    color: #c2c2c2; }
+    color: #c2c2c2;
+    font-weight: bold; }
   .uk-input.uk-form-danger {
     border-bottom: 1px solid #F44336; }
   .uk-input:focus, .uk-input:active {
@@ -238,7 +274,8 @@ form small {
     .uk-textarea {
       font-size: 14px; } }
   .uk-textarea::placeholder {
-    color: #c2c2c2; }
+    color: #c2c2c2;
+    font-weight: bold; }
   .uk-textarea.uk-form-danger {
     border-bottom: 1px solid #F44336; }
   .uk-textarea:focus {
@@ -266,17 +303,16 @@ form small {
     width: 100%; }
   .form-dark .uk-input {
     color: #FFFFFF;
-    background: rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.05);
     border-color: rgba(255, 255, 255, 0.5); }
     .form-dark .uk-input::placeholder {
-      color: rgba(255, 255, 255, 0.75); }
+      color: rgba(255, 255, 255, 0.5); }
     .form-dark .uk-input:focus, .form-dark .uk-input:active {
-      background: rgba(255, 255, 255, 0.25);
       border-color: #FFFFFF; }
   .form-dark .uk-textarea {
     min-height: 100px;
     color: #FFFFFF;
-    background: rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.05);
     border-bottom: 1px solid rgba(255, 255, 255, 0.5);
     font-size: 11px; }
     @media screen and (min-width: 0) {
@@ -289,9 +325,8 @@ form small {
       .form-dark .uk-textarea {
         font-size: 14px; } }
     .form-dark .uk-textarea::placeholder {
-      color: rgba(255, 255, 255, 0.75); }
+      color: rgba(255, 255, 255, 0.5); }
     .form-dark .uk-textarea:focus {
-      background: rgba(255, 255, 255, 0.25);
       border-color: #FFFFFF;
       color: #FFFFFF; }
   .form-dark .uk-button {

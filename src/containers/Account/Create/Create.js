@@ -81,9 +81,9 @@ class CreateAccount extends Component {
           <div className="uk-flex-center uk-flex">
             <div className="uk-width-medium form-dark">
               <AvatarUploader onSuccess={this.updateAvatar} placeholder={this.state.photoURL} getRandomAvatar={this.getRandomAvatar}/>
-              <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
-                <Field name="displayName" type="text" placeholder="Display Name" component={renderInput} />
-                <Field name="wallDescription" component={renderTextArea} placeholder="This will be displayed on your profile wall below your name" />
+              <form onSubmit={handleSubmit(this.onSubmit.bind(this))} className="uk-form-large uk-text-center">
+                <Field name="displayName" type="text" placeholder="Profile Name" component={renderInput} />
+                <Field name="wallDescription" component={renderTextArea} placeholder="what do you want people to be honest about" />
                 <button className="uk-button button-accent" type="submit" disabled={submitting}>Create Profile</button>
               </form>
             </div>

@@ -1,0 +1,46 @@
+
+.profile-card{
+    .uk-card-media-top{
+        margin: 0 auto;
+        >img{
+            margin: 60px auto 0;
+            display: block;
+            max-width: 100px;
+            //height: 200px;
+            overflow: hidden;
+            background: white;
+        }
+        a{
+            margin: -100px auto 0 auto;
+            display: block;
+            width: 200px;
+            height: 200px;
+            overflow: hidden;
+            img{
+               //  margin-bottom: -55%; 
+               //  width: auto;
+               // min-width: 100%;
+               background: white;
+               height: 100%;
+               margin: 0 auto;
+               width: auto;
+               max-width: initial;
+               transform: translateX(-50%);
+               position: relative;
+               left: 50%;
+              
+            }
+        }
+        
+    }
+    .uk-card-body{
+        padding: 15px 0 0;
+
+        h3{
+            margin: 0;
+        }
+        p{
+           margin: 0; 
+        }
+    }
+}

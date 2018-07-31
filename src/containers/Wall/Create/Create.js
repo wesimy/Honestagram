@@ -5,6 +5,7 @@ import routes from '../../../config/routes';
 import { createWall } from '../wallActions';
 import AntdFormField from '../../../hoc/AntdFormField/AntdFormField';
 import { Input, Button } from "antd";
+import { renderInput, renderTextArea } from '../../../util/renderFormFields';
 import MasterPage from '../../../hoc/MasterPage/MasterPage';
 import PhotoUploader from '../../../componenets/PhotoUploader/PhotoUploader';
 import placeholder from '../../../media/svg/add-image-placeholder-icon.svg';
@@ -69,19 +70,23 @@ class CreateWall extends Component {
 
     const { handleSubmit, pristine, reset, submitting } = this.props;
     return (
-      <div className="page">
-        <div className="bg-white ">
-          <div className="uk-container">
+      <div className="uk-position-center ">
+        <div className="uk-container uk-text-center">
+          <div className="uk-flex-center uk-flex">
+            <div className="uk-width-medium form-dark">
             <PhotoUploader onSuccess={this.updatePhoto} placeholder={this.state.photoURL} />
             <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
-              <Field label="Display Name" name="displayName" component={AInput} placeholder="Display Name" hasFeedback />
-              <Field label="Tell us about your wall" name="wallDescription" component={ATextArea} placeholder="This is a good place to ask people what you like them to be honest about" hasFeedback />
-              <Field label="Email Address" name="email" component={AInput} placeholder="Email Address" disabled hasFeedback />
-              <Button type="primary" htmlType="submit">Submit</Button>
+              <Field  name="displayName" placeholder="Wall Title"  component={renderInput} />
+              <Field name="wallDescription" placeholder="What is this wall about?"  component={renderTextArea} />
+              <Field name="email" placeholder="Email Address" disabled type="hidden" component={renderInput}/>
+              <button className="uk-button button-accent" type="submit">Create Wall</button>
             </form>
+
+ </div>
           </div>
         </div>
       </div>
+            
     )
   }
 }

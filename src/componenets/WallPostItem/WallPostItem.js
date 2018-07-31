@@ -49,7 +49,8 @@ export default ({ isOwner, datasource, requestIdentity, makePrivate}) => {
 
            {
                !datasource.isPublic &&
-               <div className="uk-position-top-right uk-position-small"><a href="#">Private</a></div>
+            
+               <div className="uk-card-badge uk-label">Private</div>
 
            }
 

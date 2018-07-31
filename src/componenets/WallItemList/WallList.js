@@ -9,9 +9,12 @@ export default ({ datasource = {}, orderby = 'date', order='desc' }) => {
         (item, id) => {
             const wall = { id: id, ...item};
             return(
-                <li id={id} key={id} >
+               (!wall.isProfile)? 
+               <li id={id} key={id} >
                 <WallItem id={id} datasource={wall} />
             </li>
+            :
+            false
             );
         });
 

@@ -7,6 +7,8 @@ import DashboardRequests from './DashboardRequests/DashboardRequests';
 import './Dashboard.css';
 import PageContent from '../../componenets/PageContent/PageContent';
 import { database } from '../../config/firebase';
+import ProfileCard from '../../componenets/ProfileCard/ProfileCard';
+import _ from 'lodash';
 
 class Dashboard extends Component {
   constructor(props) {
@@ -38,6 +40,10 @@ class Dashboard extends Component {
   }
 
   render() {
+
+    
+
+
     return (
 
       <PageContent loading={this.state.loading}>
@@ -47,8 +53,8 @@ class Dashboard extends Component {
                   <DashboardWalls datasource={this.props.dashboard} />
                 </div>
                 <div className="uk-width-1-3@m ">
-
-                  <DashboardRequests />
+      
+                  <ProfileCard datasource={this.props.dashboard} />
 
                 </div>
               </div>
