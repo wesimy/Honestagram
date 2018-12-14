@@ -78,12 +78,15 @@ class CreateAccount extends Component {
 
       <div className="uk-position-center ">
         <div className="uk-container uk-text-center">
+        <div className=" uk-light uk-flex-center uk-flex">
+            <p className="uk-width-3-5@m">This is your main profile wall, you could create multiple walls for different things on your dashboard.</p>
+          </div>
           <div className="uk-flex-center uk-flex">
             <div className="uk-width-medium form-dark">
               <AvatarUploader onSuccess={this.updateAvatar} placeholder={this.state.photoURL} getRandomAvatar={this.getRandomAvatar}/>
               <form onSubmit={handleSubmit(this.onSubmit.bind(this))} className="uk-form-large uk-text-center">
                 <Field name="displayName" type="text" placeholder="Profile Name" component={renderInput} />
-                <Field name="wallDescription" component={renderTextArea} placeholder="what do you want people to be honest about" />
+                <Field name="wallDescription" component={renderTextArea} placeholder="about this wall" />
                 <button className="uk-button button-accent" type="submit" disabled={submitting}>Create Profile</button>
               </form>
             </div>

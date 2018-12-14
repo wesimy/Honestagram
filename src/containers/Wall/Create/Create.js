@@ -70,23 +70,24 @@ class CreateWall extends Component {
 
     const { handleSubmit, pristine, reset, submitting } = this.props;
     return (
-      <div className="uk-position-center ">
+      <div className="uk-position-center">
         <div className="uk-container uk-text-center">
+          
           <div className="uk-flex-center uk-flex">
             <div className="uk-width-medium form-dark">
-            <PhotoUploader onSuccess={this.updatePhoto} placeholder={this.state.photoURL} />
-            <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
-              <Field  name="displayName" placeholder="Wall Title"  component={renderInput} />
-              <Field name="wallDescription" placeholder="What is this wall about?"  component={renderTextArea} />
-              <Field name="email" placeholder="Email Address" disabled type="hidden" component={renderInput}/>
-              <button className="uk-button button-accent" type="submit">Create Wall</button>
-            </form>
+              <PhotoUploader onSuccess={this.updatePhoto} placeholder={this.state.photoURL} />
+              <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
+                <Field name="displayName" placeholder="Wall Title" component={renderInput} />
+                <Field name="wallDescription" placeholder="What is this wall about?" component={renderTextArea} />
+                <Field name="email" placeholder="Email Address" disabled type="hidden" component={renderInput} />
+                <button className="uk-button button-accent" type="submit">Create Wall</button>
+              </form>
 
- </div>
+            </div>
           </div>
         </div>
       </div>
-            
+
     )
   }
 }

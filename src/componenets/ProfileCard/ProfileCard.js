@@ -12,9 +12,7 @@ export default ({ datasource = {} }) => {
         (item, id) => {
             
             const wall = { id: id, ...item};
-            console.log('----------------------');
-            console.log(item);
-            console.log('----------------------');
+            
             return(
                (wall.isProfile)? 
                
@@ -34,7 +32,7 @@ export default ({ datasource = {} }) => {
                        
                            
                            <div className="uk-card-body">
-                           <h3 className="uk-comment-title uk-margin-remove"><a href={`${routes.wall}/${id}`}>{wall.displayName}</a></h3>
+                           <h3 className="uk-comment-title"><a href={`${routes.wall}/${id}`}>{wall.displayName}</a></h3>
                            
                            <SocialShare datasource={wall} size={25} shareurl={`${routes.baseurl}${routes.wall}/${id}`}/>
                            </div>
