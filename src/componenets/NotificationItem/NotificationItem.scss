@@ -10,7 +10,21 @@
         }
     }
 
-    &.post-private{
-      //  opacity: 0.5;
+    h4{
+        font-weight: normal;
+        color: $light-grey;
+        @include font-size($sm-font);
     }
+    p{
+        @include font-size($sm-font);
+    }
+    .uk-comment-footer{
+        //color: $light-grey;
+        margin-top: 20px;
+    }
+
+    .uk-button{
+        margin-left: 1px;
+    }
+    
 }

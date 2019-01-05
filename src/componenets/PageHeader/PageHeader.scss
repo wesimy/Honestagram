@@ -16,7 +16,9 @@
                 &:active {
                     color: $white;
                 }
+
             }
+            
         }
     } // .uk-navbar-sticky {
     // }
@@ -33,6 +35,16 @@
             &:first-child {
                 margin-right: 5px;
             }
+            position: relative;
+                .uk-badge{
+                    @include font-size($xxs-font);
+                    background: $accent;
+                    color: white;
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    transform: translateX(50%) translateY(-50%);
+                }
         }
         a {
             text-align: center; 

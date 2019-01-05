@@ -4,3 +4,35 @@
     transition: color 0.3s ease-in-out; }
     .notification-item .uk-dropdown-nav a:hover {
       color: #FF5722; }
+
+.notification-item h4 {
+  font-weight: normal;
+  color: #c2c2c2;
+  font-size: 12px; }
+  @media screen and (min-width: 0) {
+    .notification-item h4 {
+      font-size: 12px; } }
+  @media screen and (min-width: 960px) {
+    .notification-item h4 {
+      font-size: 14px; } }
+  @media screen and (min-width: 1200px) {
+    .notification-item h4 {
+      font-size: 16px; } }
+
+.notification-item p {
+  font-size: 12px; }
+  @media screen and (min-width: 0) {
+    .notification-item p {
+      font-size: 12px; } }
+  @media screen and (min-width: 960px) {
+    .notification-item p {
+      font-size: 14px; } }
+  @media screen and (min-width: 1200px) {
+    .notification-item p {
+      font-size: 16px; } }
+
+.notification-item .uk-comment-footer {
+  margin-top: 20px; }
+
+.notification-item .uk-button {
+  margin-left: 1px; }

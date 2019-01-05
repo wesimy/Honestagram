@@ -4,7 +4,7 @@
 const session = localStorage.getItem("session");
 
 
-const initialState = JSON.parse(session) || { isAuthenticated: false, account: {}, user: {}};
+const initialState = JSON.parse(session) || { isAuthenticated: false, account: {}, user: {}, notifications: {}};
 export default function(state = initialState, action){
     switch (action.type){
         case 'AUTH_UPDATE_ACCOUNT':

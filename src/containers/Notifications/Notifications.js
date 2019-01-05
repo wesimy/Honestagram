@@ -62,7 +62,17 @@ class Posts extends Component {
   render() {
     return (
       <PageContent loading={this.state.loading}>
+          <div className="uk-container">
+          
+          <div className="uk-grid uk-child-width-1-1" data-uk-grid>
+          <div className="page-section">
+          <div className="section-header">
+          <h2>Notifications</h2>
+          </div>
           <NotificationList datasource={this.props.notifications} updateNotification={this.updateNotification}/>
+          </div>
+          </div>
+          </div>
       </PageContent>
     )
   }

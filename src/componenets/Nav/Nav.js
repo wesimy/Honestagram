@@ -2,8 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import routes from '../../config/routes';
 import placeholder from '../../media/svg/user-placeholder.svg';
+import _ from 'lodash';
 
-export default ({ isAuth, account }) => {
+export default ({ isAuth, account , global }) => {
     
     return (
 
@@ -20,7 +21,7 @@ export default ({ isAuth, account }) => {
                     (
                         <ul className="uk-iconnav uk-flex uk-flex-middle">
                             <li><Link to={routes.dashboard} uk-tooltip={'title: Dashboard;delay: 250;animation: uk-animation-slide-bottom-small'}><div className="uk-border-circle"><img className="uk-border-circle" src={(account.photoURL)? account.photoURL: placeholder} alt={account.displayName} /></div></Link></li> 
-                            <li><Link data-uk-icon="icon: bell" to={routes.notifications} uk-tooltip="title:Identity Requests; delay: 250;animation: uk-animation-slide-bottom-small" ></Link></li>
+                            <li><Link data-uk-icon="icon: mask" to={routes.notifications} uk-tooltip="title:Identity Requests; delay: 250;animation: uk-animation-slide-bottom-small" ></Link>{(_.size(global.notifications)>0)? <span className="uk-badge">{_.size(global.notifications)}</span>:''}</li>
                             <li><Link data-uk-icon="icon: settings" to={routes.settings} uk-tooltip="title:Account Settings; delay: 250;animation: uk-animation-slide-bottom-small"></Link></li>
                             {/* <li><Link to={routes.settings} uk-tooltip={'title: Account Settings;delay: 250;animation: uk-animation-slide-bottom-small'}><div className="uk-border-circle"><img className="uk-border-circle" src={(account.photoURL)? account.photoURL: placeholder} alt={account.displayName} /></div></Link></li> */}
                             <li><Link data-uk-icon="icon: sign-out" to={routes.signout} uk-tooltip="title: Sign out; delay: 250;animation: uk-animation-slide-bottom-small"></Link></li>

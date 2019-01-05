@@ -49,14 +49,16 @@ class Dashboard extends Component {
       <PageContent loading={this.state.loading}>
          <div className="uk-container">
               <div data-uk-grid>
-                <div className="uk-width-2-3@m">
+              <div className="uk-width-1-3@s uk-flex-last@s">
+      
+      <ProfileCard datasource={this.props.dashboard} />
+
+    </div>
+
+                <div className="uk-width-2-3@s">
                   <DashboardWalls datasource={this.props.dashboard} />
                 </div>
-                <div className="uk-width-1-3@m ">
-      
-                  <ProfileCard datasource={this.props.dashboard} />
-
-                </div>
+                
               </div>
 
             </div>

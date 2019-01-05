@@ -43,7 +43,7 @@ export function newNotification(data, callback = () => { }) {
 
 // Fetch Wall Data
 export function fetchNotifications(uid, callback = () => { }) {
-    console.log(uid);
+    
     const noteDB = database.ref(`/notifications/${uid}`).orderByChild("status").equalTo("pending");
     return dispatch => {
         noteDB.once('value', snapshot => {

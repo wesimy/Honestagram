@@ -16,8 +16,27 @@
       color: #FFFFFF; }
   .app-header .uk-iconnav {
     margin: 15px 0; }
-    .app-header .uk-iconnav li:first-child {
-      margin-right: 5px; }
+    .app-header .uk-iconnav li {
+      position: relative; }
+      .app-header .uk-iconnav li:first-child {
+        margin-right: 5px; }
+      .app-header .uk-iconnav li .uk-badge {
+        font-size: 10px;
+        background: #FF5722;
+        color: white;
+        position: absolute;
+        top: 0;
+        right: 0;
+        transform: translateX(50%) translateY(-50%); }
+        @media screen and (min-width: 0) {
+          .app-header .uk-iconnav li .uk-badge {
+            font-size: 10px; } }
+        @media screen and (min-width: 960px) {
+          .app-header .uk-iconnav li .uk-badge {
+            font-size: 11px; } }
+        @media screen and (min-width: 1200px) {
+          .app-header .uk-iconnav li .uk-badge {
+            font-size: 12px; } }
     .app-header .uk-iconnav a {
       text-align: center;
       border-radius: 50%;

@@ -22,7 +22,7 @@ class PageHeader extends Component {
                             </div>
                         </div>
                         <div className="uk-navbar-right">
-                            <Nav isAuth={this.props.session.isAuthenticated} account={this.props.session.account} />
+                            <Nav isAuth={this.props.session.isAuthenticated} account={this.props.session.account} global={this.props.global} />
                         </div>
                     </nav>
                     </div>
@@ -33,7 +33,8 @@ class PageHeader extends Component {
 }
 function mapStateToProps(state) {
     return {
-        session: state.session
+        session: state.session,
+        global: state.global
     }
 }
 

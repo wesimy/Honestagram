@@ -5,6 +5,7 @@ import { reducer as formReducer } from 'redux-form';
 import wallReducer from '../containers/Wall/wallReucer';
 import dashboardReucer from '../containers/Dashboard/dashboardReucer';
 import notificationsReucer from '../containers/Notifications/notificationsReucer';
+import globalReducer from '../componenets/PageContent/PageReducer'
 // import profileReducers from '../containers/Profile/profileReducers';
 
 export default combineReducers({
@@ -12,6 +13,7 @@ export default combineReducers({
     form: formReducer,
     wall: wallReducer,
     dashboard : dashboardReucer,
-    notifications: notificationsReucer
+    notifications: notificationsReucer,
+    global: globalReducer
     // profile: profileReducers
 });
